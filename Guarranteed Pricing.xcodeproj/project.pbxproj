@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D2A5E4771C9F4587004BF18A /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A5E4761C9F4587004BF18A /* Firebase.framework */; };
 		D2A5E4791C9F4665004BF18A /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A5E4781C9F4665004BF18A /* libicucore.tbd */; };
 		D2A5E47B1C9F4683004BF18A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A5E47A1C9F4683004BF18A /* libc++.tbd */; };
 		D2A5E47D1C9F4699004BF18A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A5E47C1C9F4699004BF18A /* CFNetwork.framework */; };
@@ -21,6 +20,7 @@
 		D2BADDA11C9CA9C700AACD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2BADD9F1C9CA9C700AACD71 /* LaunchScreen.storyboard */; };
 		D2BADDAC1C9CA9C800AACD71 /* Guarranteed_PricingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BADDAB1C9CA9C800AACD71 /* Guarranteed_PricingTests.swift */; };
 		D2BADDB71C9CA9C800AACD71 /* Guarranteed_PricingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BADDB61C9CA9C800AACD71 /* Guarranteed_PricingUITests.swift */; };
+		D2FF6ACE1CA073F500689B7D /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FF6ACD1CA073F500689B7D /* Firebase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D2A5E4761C9F4587004BF18A /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../../Desktop/Firebase.framework; sourceTree = "<group>"; };
 		D2A5E4781C9F4665004BF18A /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		D2A5E47A1C9F4683004BF18A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D2A5E47C1C9F4699004BF18A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -61,6 +60,7 @@
 		D2BADDB21C9CA9C800AACD71 /* Guarranteed PricingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Guarranteed PricingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BADDB61C9CA9C800AACD71 /* Guarranteed_PricingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guarranteed_PricingUITests.swift; sourceTree = "<group>"; };
 		D2BADDB81C9CA9C800AACD71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2FF6ACD1CA073F500689B7D /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../../../Desktop/Firebase.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +69,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2A5E4811C9F46E8004BF18A /* SystemConfiguration.framework in Frameworks */,
+				D2FF6ACE1CA073F500689B7D /* Firebase.framework in Frameworks */,
 				D2A5E47F1C9F46AB004BF18A /* Security.framework in Frameworks */,
 				D2A5E47D1C9F4699004BF18A /* CFNetwork.framework in Frameworks */,
 				D2A5E47B1C9F4683004BF18A /* libc++.tbd in Frameworks */,
 				D2A5E4791C9F4665004BF18A /* libicucore.tbd in Frameworks */,
-				D2A5E4771C9F4587004BF18A /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,12 +97,12 @@
 		D2BADD8A1C9CA9C700AACD71 = {
 			isa = PBXGroup;
 			children = (
+				D2FF6ACD1CA073F500689B7D /* Firebase.framework */,
 				D2A5E4801C9F46E8004BF18A /* SystemConfiguration.framework */,
 				D2A5E47E1C9F46AB004BF18A /* Security.framework */,
 				D2A5E47C1C9F4699004BF18A /* CFNetwork.framework */,
 				D2A5E47A1C9F4683004BF18A /* libc++.tbd */,
 				D2A5E4781C9F4665004BF18A /* libicucore.tbd */,
-				D2A5E4761C9F4587004BF18A /* Firebase.framework */,
 				D2BADD951C9CA9C700AACD71 /* Guarranteed Pricing */,
 				D2BADDAA1C9CA9C800AACD71 /* Guarranteed PricingTests */,
 				D2BADDB51C9CA9C800AACD71 /* Guarranteed PricingUITests */,
