@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="misc_info" id="ykI-Hj-QdO">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ykI-Hj-QdO" id="eRJ-Ku-PxF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -96,7 +96,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="hvac_info" id="7ee-LB-vIf">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7ee-LB-vIf" id="XEP-Ae-f8c">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -134,7 +134,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="plumbing_info" id="Nvn-3a-sHJ">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nvn-3a-sHJ" id="qUh-jm-mT3">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -185,7 +185,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginAttempt:" destination="jz1-UL-toT" eventType="touchUpInside" id="QTq-c4-DKf"/>
-                                    <segue destination="mJH-G5-zG5" kind="modal" id="9Zi-Qf-i92"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oHu-Sj-POX">
@@ -213,6 +212,7 @@
                     <connections>
                         <outlet property="password" destination="Ned-3K-1tH" id="XiI-vx-aVF"/>
                         <outlet property="username" destination="PfL-ZW-kkP" id="faR-WR-GUr"/>
+                        <segue destination="mJH-G5-zG5" kind="modal" identifier="login_successful_segue" id="Qoe-BX-i5r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgx-9o-AEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -251,7 +251,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="password" destination="5UL-Vb-cWF" id="ZKT-Gd-g9Q"/>
+                        <outlet property="email" destination="5UL-Vb-cWF" id="gxl-CY-weX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ira-R8-W6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -367,7 +367,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="handyman_info" id="Q4O-8y-mck">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q4O-8y-mck" id="tSz-Vd-3DO">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>

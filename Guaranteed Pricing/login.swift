@@ -33,19 +33,18 @@ class Login: UIViewController {
             print(ref.authData)
             // user is logged in, check authData for data
             // TODO: get this below working. Just needs to move from login to next page.
-            func loginButton(){
-                self.performSegueWithIdentifier("login_successful_segue", sender: self)                }
+            self.performSegueWithIdentifier("login_successful_segue", sender: self)
         }
     }
     
     @IBAction func loginAttempt(sender: AnyObject) {
-        print("Button was pressed!");
         // Create a reference to a Firebase location
         let myRootRef = Firebase(url:"https://sizzling-inferno-451.firebaseio.com/")
         // Write data to Firebase
         //myRootRef.setValue("Do you have data? You'll love Firebase.")
         myRootRef.authUser(self.username.text, password: self.password.text) {
             error, authData in
+            print("Request returned!");
             if error != nil {
                 // an error occured while attempting login
                 //* Create system error, connection, specific API firebase errors etc etc.
@@ -61,12 +60,13 @@ class Login: UIViewController {
                     default:
                         print("Handle default situation")
                     }
-                } else {
-                    // user is logged in, check authData for data
-                    func loginButton(){
-                        self.performSegueWithIdentifier("login_successful_segue", sender: self)                }
                 }
+            } else {
+                // user is logged in, check authData for data
+                print("Successful login!");
+                self.performSegueWithIdentifier("login_successful_segue", sender: self)
             }
         }
+        print("Sending request...")
     }
 }
