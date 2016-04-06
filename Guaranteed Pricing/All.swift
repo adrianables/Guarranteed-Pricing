@@ -11,11 +11,12 @@ import Foundation
 import UIKit
 import Firebase
 
-class All: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class All: UINavigationController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
 //     var items: [String] = []
     var items = [String]()
     var item: String = ""
+    var keys = ["EPLU100", "EPLU200"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +27,15 @@ class All: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         
         ref.observeEventType(.ChildAdded, withBlock: { snapshot in
-           let item = (snapshot.key)
+            let item = (snapshot.key)
             print(item)
             self.items.append(item)
+//            self.tableView.reloadData()
             print(self.items.count)
+            print(snapshot.value)
+
         })
         
-        print(items.count)
-
     }
 
             
@@ -52,13 +54,6 @@ class All: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //            self.items.append(snapshot.key)
 //        })
     
-    
-
-
-    
-
-
-
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("You selected cell #\(indexPath.row)!")
@@ -79,20 +74,19 @@ class All: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count;
-//        return 2
+       // return self.items.count;print(self.items.count)
+        return 2
     }
     
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell
+        //        let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         
-        
-        cell.textLabel?.text = self.items[indexPath.row]
-//        cell.textLabel?.text = "Test"
+        //cell.textLabel?.text = self.items[indexPath.row]
+        cell.textLabel?.text = keys[indexPath.row]
         return cell
     }
-
-    }
+}
     
     

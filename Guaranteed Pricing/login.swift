@@ -15,6 +15,7 @@ class Login: UIViewController {
     @IBOutlet var password: UITextField!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getCurrentUser()
@@ -53,8 +54,18 @@ class Login: UIViewController {
                     switch (errorCode) {
                     case .UserDoesNotExist:
                         print("Handle invalid user")
+                        let refreshAlert = UIAlertController(title: "Refresh", message: "All data will be lost.", preferredStyle: UIAlertControllerStyle.Alert)
+                        
+                        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+                            print("Handle Ok logic here")
+                        }))
                     case .InvalidEmail:
                         print("Handle invalid email")
+                        let refreshAlert = UIAlertController(title: "Refresh", message: "All data will be lost.", preferredStyle: UIAlertControllerStyle.Alert)
+                        
+                        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+                            print("Handle Ok logic here")
+                        }))
                     case .InvalidPassword:
                         print("Handle invalid password")
                     default:
@@ -66,7 +77,20 @@ class Login: UIViewController {
                 print("Successful login!");
                 self.performSegueWithIdentifier("login_successful_segue", sender: self)
             }
+            
         }
         print("Sending request...")
+        
+//        let refreshAlert = UIAlertController(title: "Refresh", message: "All data will be lost.", preferredStyle: UIAlertControllerStyle.Alert)
+//        
+//        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+//            print("Handle Ok logic here")
+//        }))
+//        
+//        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+//            print("Handle Cancel Logic here")
+//        }))
+//        
+//        presentViewController(refreshAlert, animated: true, completion: nil)
     }
 }
