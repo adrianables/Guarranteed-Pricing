@@ -10,11 +10,15 @@ import Foundation
 import UIKit
 import Firebase
 
-class All: UINavigationController, UITableViewDataSource, UITableViewDelegate {
+struct Service {
+    var name: String
+    var description: String
+}
+
+class All: UITableViewController {
     
-    var items: [String] = []
-    var tableView: UITableView!
-    let cellIdentifier = "CellIdentifier"
+    var items: [Service] = []
+    let cellIdentifier = "item"
     
     @IBOutlet var Description : UITextField!
     
@@ -22,21 +26,16 @@ class All: UINavigationController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        self.tableView = UITableView(frame:self.view!.frame)
-        self.tableView!.delegate = self
-        self.tableView!.dataSource = self
-        self.tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-        self.view?.addSubview(self.tableView)
-        
         let ref = Firebase(url:"https://sizzling-inferno-451.firebaseio.com/services")
         ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
             for child in snapshot.children {
                 
                 let name = child.value!!.objectForKey("name") as! String
+                let description = child.value!!.objectForKey("description") as! String
                
-
+                let service = Service(name: name, description: description)
                 
-                self.items.append(name)
+                self.items.append(service)
             }
             // do some stuff once
             //            print(snapshot.value)
@@ -59,20 +58,20 @@ class All: UINavigationController, UITableViewDataSource, UITableViewDelegate {
 //        }
 //    }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         
         // Fetch Fruit
-        let fruit = items[indexPath.row]
+        let item = items[indexPath.row]
         
         // Configure Cell
-        cell.textLabel?.text = fruit
+        cell.textLabel?.text = item.name
         return cell
     }
     
@@ -81,4 +80,13 @@ class All: UINavigationController, UITableViewDataSource, UITableViewDelegate {
 //        print(items[indexPath.row])
 //        self.performSegueWithIdentifier("CellIdentifier", sender: self)
 //    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            let item = self.items[indexPath.row]
+            
+            let destination: AllListView = segue.destinationViewController as! AllListView
+            destination.item = item
+        }
+    }
 }

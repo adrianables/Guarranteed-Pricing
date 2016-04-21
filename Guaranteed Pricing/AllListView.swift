@@ -10,70 +10,50 @@ import Foundation
 import UIKit
 import Firebase
 
-class AllListView: UINavigationController, UITableViewDataSource, UITableViewDelegate {
+class AllListView: UITableViewController {
     
     @IBOutlet var Description: UILabel!
     
-
-    var items: [String] = []
-    var tableView: UITableView!
-    let cellIdentifier = "CellIdentifier"
+    var item: Service?
+    let cellIdentifier = "item"
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
-        self.tableView = UITableView(frame:self.view!.frame)
-        self.tableView!.delegate = self
-        self.tableView!.dataSource = self
-        self.tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-        self.view?.addSubview(self.tableView)
-        
-        let ref = Firebase(url:"https://sizzling-inferno-451.firebaseio.com/services")
-        ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
-            for child in snapshot.children {
-//                
-//                self.Description.text?.append("description")(child.value!!.objectForKey("description") as! String?)!
-//
-//                
-                
-                
-                self.items.append("description")
-            }
-            // do some stuff once
-            //            print(snapshot.value)
-            
-            // get these values and put them in the cell's text view. key is more important
-            //            print(snapshot.key)
-            
-            
-            
-            // add to the array and just this array
-            
-            
-            self.tableView!.reloadData()
-        })
     }
     
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //        if segue.identifier == "CellIdentifier" {
-    //            player = Player(name: nameTextField.text!, game: "Chess", rating: 1)
-    //        }
-    //    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let _ = self.item {
+            return 16;
+        }
+        return 0;
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         
-        // Fetch Fruit
-        let fruit = items[indexPath.row]
+        if let item = self.item {
+            var name = ""
+            var description = ""
+            
+            switch indexPath.row {
+            case 0: name = "Name:"
+                description = item.name
+            case 1: name = "Description"
+                description = item.description
+            default: name = "error"
+                description = "error"
+            }
+            
+            
+            cell.textLabel?.text = name
+            cell.detailTextLabel?.text = description
+        }
         
-        // Configure Cell
-        cell.textLabel?.text = fruit
+        
+        
+        
+        
         return cell
     }
     
