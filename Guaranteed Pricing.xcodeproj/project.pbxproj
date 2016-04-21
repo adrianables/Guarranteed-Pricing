@@ -19,6 +19,7 @@
 		D2329FA21C961B6000780030 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2329FA11C961B6000780030 /* CFNetwork.framework */; };
 		D2329FA41C961B6B00780030 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2329FA31C961B6B00780030 /* Security.framework */; };
 		D2329FA61C961B7D00780030 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2329FA51C961B7D00780030 /* SystemConfiguration.framework */; };
+		D2C51EBA1CC017E4004905A1 /* AllListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C51EB91CC017E4004905A1 /* AllListView.swift */; };
 		D2FF6AD01CA078D700689B7D /* All.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF6ACF1CA078D700689B7D /* All.swift */; };
 		D2FF6AD21CA0790300689B7D /* HVAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF6AD11CA0790300689B7D /* HVAC.swift */; };
 		D2FF6AD41CA079E300689B7D /* Plumbing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF6AD31CA079E300689B7D /* Plumbing.swift */; };
@@ -66,6 +67,7 @@
 		D2329FA11C961B6000780030 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D2329FA31C961B6B00780030 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D2329FA51C961B7D00780030 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D2C51EB91CC017E4004905A1 /* AllListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListView.swift; sourceTree = "<group>"; };
 		D2FF6ACF1CA078D700689B7D /* All.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = All.swift; sourceTree = "<group>"; };
 		D2FF6AD11CA0790300689B7D /* HVAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HVAC.swift; sourceTree = "<group>"; };
 		D2FF6AD31CA079E300689B7D /* Plumbing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plumbing.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				D2329F6B1C961A9100780030 /* AppDelegate.swift */,
 				D2FF6ADF1CAC764400689B7D /* ForgotPassword.swift */,
 				D2329F711C961A9100780030 /* Main.storyboard */,
+				D2C51EB91CC017E4004905A1 /* AllListView.swift */,
 				D2FF6ACF1CA078D700689B7D /* All.swift */,
 				D2FF6AD11CA0790300689B7D /* HVAC.swift */,
 				D2FF6AD31CA079E300689B7D /* Plumbing.swift */,
@@ -310,6 +313,7 @@
 				D2FF6AD61CA07A1E00689B7D /* Handyman.swift in Sources */,
 				D2FF6ADA1CA07A9D00689B7D /* Misc..swift in Sources */,
 				D2FF6AD41CA079E300689B7D /* Plumbing.swift in Sources */,
+				D2C51EBA1CC017E4004905A1 /* AllListView.swift in Sources */,
 				D2FF6AD81CA07A8800689B7D /* Repairs.swift in Sources */,
 				D2FF6ADC1CA07C4300689B7D /* Reachability.swift in Sources */,
 				D2FF6AD21CA0790300689B7D /* HVAC.swift in Sources */,

@@ -1,8 +1,8 @@
 //
-//  Repairs.swift
+//  AllListView.swift
 //  Guaranteed Pricing
 //
-//  Created by DePauw on 3/21/16.
+//  Created by DePauw on 4/14/16.
 //  Copyright © 2016 DePauw. All rights reserved.
 //
 
@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 import Firebase
 
-class Repairs: UINavigationController, UITableViewDelegate, UITableViewDataSource {
+class AllListView: UINavigationController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet var Description: UILabel!
+    
+
     var items: [String] = []
     var tableView: UITableView!
     let cellIdentifier = "CellIdentifier"
-    
-    @IBOutlet var Description : UITextField!
-    
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -30,10 +31,13 @@ class Repairs: UINavigationController, UITableViewDelegate, UITableViewDataSourc
         let ref = Firebase(url:"https://sizzling-inferno-451.firebaseio.com/services")
         ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
             for child in snapshot.children {
+//                
+//                self.Description.text?.append("description")(child.value!!.objectForKey("description") as! String?)!
+//
+//                
                 
-                let name = child.value!!.objectForKey("name") as! String
                 
-                self.items.append(name)
+                self.items.append("description")
             }
             // do some stuff once
             //            print(snapshot.value)
@@ -50,11 +54,12 @@ class Repairs: UINavigationController, UITableViewDelegate, UITableViewDataSourc
         })
     }
     
-    @IBAction func cellTransition(sender: AnyObject) {
-        let myRootRef = Firebase(url:"https://sizzling-inferno-451.firebaseio.com/")
-        
-        self.performSegueWithIdentifier("CellIdentifier", sender: self)
-    }
+    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //        if segue.identifier == "CellIdentifier" {
+    //            player = Player(name: nameTextField.text!, game: "Chess", rating: 1)
+    //        }
+    //    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -72,9 +77,12 @@ class Repairs: UINavigationController, UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
-    // onclick printing
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(items[indexPath.row])
-        self.performSegueWithIdentifier("CellIdentifier", sender: self)
-    }
+    //    // onclick printing
+    //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    //        print(items[indexPath.row])
+    //        self.performSegueWithIdentifier("CellIdentifier", sender: self)
+    //    }
 }
+    
+
+
