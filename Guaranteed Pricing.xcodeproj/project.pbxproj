@@ -20,6 +20,12 @@
 		D2329FA41C961B6B00780030 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2329FA31C961B6B00780030 /* Security.framework */; };
 		D2329FA61C961B7D00780030 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2329FA51C961B7D00780030 /* SystemConfiguration.framework */; };
 		D2C51EBA1CC017E4004905A1 /* AllListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C51EB91CC017E4004905A1 /* AllListView.swift */; };
+		D2F2C4331CCD5E2E00793DA5 /* HVACListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F2C4321CCD5E2E00793DA5 /* HVACListView.swift */; };
+		D2F2C4351CCD5E4E00793DA5 /* PlumbingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F2C4341CCD5E4E00793DA5 /* PlumbingListView.swift */; };
+		D2F2C4371CCD5EBD00793DA5 /* HandymanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F2C4361CCD5EBD00793DA5 /* HandymanListView.swift */; };
+		D2F2C4391CCD5ED900793DA5 /* RepairsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F2C4381CCD5ED900793DA5 /* RepairsListView.swift */; };
+		D2F2C43B1CCD5F1E00793DA5 /* MiscListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F2C43A1CCD5F1E00793DA5 /* MiscListView.swift */; };
+		D2F2C43D1CCD5F6100793DA5 /* ReachabiltyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F2C43C1CCD5F6100793DA5 /* ReachabiltyListView.swift */; };
 		D2FF6AD01CA078D700689B7D /* All.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF6ACF1CA078D700689B7D /* All.swift */; };
 		D2FF6AD21CA0790300689B7D /* HVAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF6AD11CA0790300689B7D /* HVAC.swift */; };
 		D2FF6AD41CA079E300689B7D /* Plumbing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF6AD31CA079E300689B7D /* Plumbing.swift */; };
@@ -68,6 +74,12 @@
 		D2329FA31C961B6B00780030 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D2329FA51C961B7D00780030 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D2C51EB91CC017E4004905A1 /* AllListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListView.swift; sourceTree = "<group>"; };
+		D2F2C4321CCD5E2E00793DA5 /* HVACListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HVACListView.swift; sourceTree = "<group>"; };
+		D2F2C4341CCD5E4E00793DA5 /* PlumbingListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlumbingListView.swift; sourceTree = "<group>"; };
+		D2F2C4361CCD5EBD00793DA5 /* HandymanListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandymanListView.swift; sourceTree = "<group>"; };
+		D2F2C4381CCD5ED900793DA5 /* RepairsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepairsListView.swift; sourceTree = "<group>"; };
+		D2F2C43A1CCD5F1E00793DA5 /* MiscListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscListView.swift; sourceTree = "<group>"; };
+		D2F2C43C1CCD5F6100793DA5 /* ReachabiltyListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabiltyListView.swift; sourceTree = "<group>"; };
 		D2FF6ACF1CA078D700689B7D /* All.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = All.swift; sourceTree = "<group>"; };
 		D2FF6AD11CA0790300689B7D /* HVAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HVAC.swift; sourceTree = "<group>"; };
 		D2FF6AD31CA079E300689B7D /* Plumbing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plumbing.swift; sourceTree = "<group>"; };
@@ -142,6 +154,12 @@
 				D2329F6B1C961A9100780030 /* AppDelegate.swift */,
 				D2FF6ADF1CAC764400689B7D /* ForgotPassword.swift */,
 				D2329F711C961A9100780030 /* Main.storyboard */,
+				D2F2C4321CCD5E2E00793DA5 /* HVACListView.swift */,
+				D2F2C4341CCD5E4E00793DA5 /* PlumbingListView.swift */,
+				D2F2C4361CCD5EBD00793DA5 /* HandymanListView.swift */,
+				D2F2C4381CCD5ED900793DA5 /* RepairsListView.swift */,
+				D2F2C43A1CCD5F1E00793DA5 /* MiscListView.swift */,
+				D2F2C43C1CCD5F6100793DA5 /* ReachabiltyListView.swift */,
 				D2C51EB91CC017E4004905A1 /* AllListView.swift */,
 				D2FF6ACF1CA078D700689B7D /* All.swift */,
 				D2FF6AD11CA0790300689B7D /* HVAC.swift */,
@@ -307,17 +325,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F2C43B1CCD5F1E00793DA5 /* MiscListView.swift in Sources */,
+				D2F2C4371CCD5EBD00793DA5 /* HandymanListView.swift in Sources */,
 				D2FF6AD01CA078D700689B7D /* All.swift in Sources */,
 				D2329F6C1C961A9100780030 /* AppDelegate.swift in Sources */,
 				D2FF6ADE1CA07EE900689B7D /* Login.swift in Sources */,
 				D2FF6AD61CA07A1E00689B7D /* Handyman.swift in Sources */,
 				D2FF6ADA1CA07A9D00689B7D /* Misc..swift in Sources */,
 				D2FF6AD41CA079E300689B7D /* Plumbing.swift in Sources */,
+				D2F2C43D1CCD5F6100793DA5 /* ReachabiltyListView.swift in Sources */,
+				D2F2C4331CCD5E2E00793DA5 /* HVACListView.swift in Sources */,
 				D2C51EBA1CC017E4004905A1 /* AllListView.swift in Sources */,
 				D2FF6AD81CA07A8800689B7D /* Repairs.swift in Sources */,
 				D2FF6ADC1CA07C4300689B7D /* Reachability.swift in Sources */,
 				D2FF6AD21CA0790300689B7D /* HVAC.swift in Sources */,
 				D2FF6AE01CAC764600689B7D /* ForgotPassword.swift in Sources */,
+				D2F2C4351CCD5E4E00793DA5 /* PlumbingListView.swift in Sources */,
+				D2F2C4391CCD5ED900793DA5 /* RepairsListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

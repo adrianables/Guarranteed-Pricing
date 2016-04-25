@@ -13,6 +13,20 @@ import Firebase
 struct Service {
     var name: String
     var description: String
+    var hours: String
+    var type: String
+    var estimated_payment: String
+    var ge_min_payment: String
+    var hourly_rate: String
+    var income_category: String
+    var part_cost: String
+    var part_markup: String
+    var standard_price: String
+    var task_number: String
+    var ttsp_price: String
+    var ttsp_savings: String
+    var agreement_discount: String
+    var annual_part_increase: String
 }
 
 class All: UITableViewController {
@@ -32,8 +46,23 @@ class All: UITableViewController {
                 
                 let name = child.value!!.objectForKey("name") as! String
                 let description = child.value!!.objectForKey("description") as! String
+                let hours = child.value!!.objectForKey("hours") as! String
+                let type = child.value!!.objectForKey("type") as! String
+                let agreement_discount = child.value!!.objectForKey("agreement_discount") as! String
+                let annual_part_increase = child.value!!.objectForKey("annual_part_increase") as! String
+                let estimated_payment = child.value!!.objectForKey("estimated_payment") as! String
+                let ge_min_payment = child.value!!.objectForKey("ge_min_payment") as! String
+                let income_category = child.value!!.objectForKey("income_category") as! String
+                let part_cost = child.value!!.objectForKey("part_cost") as! String
+                let part_mark_up = child.value!!.objectForKey("part_mark_up") as! String
+                let standard_price = child.value!!.objectForKey("standard_price") as! String
+                let task_number = child.value!!.objectForKey("task_number") as! String
+                let ttsp_price = child.value!!.objectForKey("ttsp_price") as! String
+                let ttsp_savings = child.value!!.objectForKey("ttsp_savings") as! String
+                let hourly_rate = child.value!!.objectForKey("hourly_rate") as! String
+
                
-                let service = Service(name: name, description: description)
+                let service = Service(name: name, description: description, hours: hours, type: type, estimated_payment: estimated_payment, ge_min_payment: ge_min_payment, hourly_rate: hourly_rate,income_category: income_category, part_cost: part_cost, part_markup: part_mark_up, standard_price: standard_price,  task_number: task_number, ttsp_price: ttsp_price, ttsp_savings: ttsp_savings, agreement_discount: agreement_discount,  annual_part_increase: annual_part_increase)
                 
                 self.items.append(service)
             }
