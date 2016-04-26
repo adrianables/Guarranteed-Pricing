@@ -99,7 +99,7 @@ class Plumbing: UITableViewController {
         if let indexPath = self.tableView.indexPathForSelectedRow {
             let item = self.items[indexPath.row]
             
-            let destination: AllListView = segue.destinationViewController as! AllListView
+            let destination: PlumbingListView = segue.destinationViewController as! PlumbingListView
             destination.item = item
         }
     }
