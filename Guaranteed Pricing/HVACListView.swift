@@ -14,7 +14,7 @@ class HVACListView: UITableViewController {
     
     @IBOutlet var Description: UILabel!
     
-    var item: Service1?
+    var item: Service?
     let cellIdentifier = "item"
     
     override func viewDidLoad(){

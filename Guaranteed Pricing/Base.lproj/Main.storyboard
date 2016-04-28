@@ -107,7 +107,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOW-sB-iIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567.5" y="-2405.5"/>
+            <point key="canvasLocation" x="1659.5" y="-2405.5"/>
         </scene>
         <!--Splash Page-->
         <scene sceneID="fuh-pj-yeZ">
@@ -336,7 +336,7 @@
         <!--Plumbing List View-->
         <scene sceneID="mtg-co-2oM">
             <objects>
-                <tableViewController id="BkL-6d-Iul" customClass="PlumbingListView" sceneMemberID="viewController">
+                <tableViewController id="BkL-6d-Iul" customClass="PlumbingListView" customModule="Guaranteed_Pricing" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jdn-qZ-g8r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -434,7 +434,7 @@
         <!--Misc List View-->
         <scene sceneID="SGU-1j-0f4">
             <objects>
-                <tableViewController id="vVS-Xf-tFT" customClass="MiscListView" sceneMemberID="viewController">
+                <tableViewController id="vVS-Xf-tFT" customClass="MiscListView" customModule="Guaranteed_Pricing" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Krb-ay-3Re">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -586,7 +586,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLx-H1-Tf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="581.60000000000002" y="1157.3"/>
+            <point key="canvasLocation" x="577.5" y="1136.5"/>
         </scene>
         <!--Handyman-->
         <scene sceneID="nbq-qV-GDL">
@@ -597,15 +597,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" textLabel="kx4-MA-Aty" style="IBUITableViewCellStyleDefault" id="FQl-YK-D2o">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="item" textLabel="kx4-MA-Aty" style="IBUITableViewCellStyleDefault" id="FQl-YK-D2o">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FQl-YK-D2o" id="1b9-Hd-qz4">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kx4-MA-Aty">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -613,6 +613,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="TzL-su-AeZ" kind="push" id="4nx-ob-Vbi"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -621,9 +624,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="tqA-Hf-0t8"/>
-                    <connections>
-                        <segue destination="TzL-su-AeZ" kind="push" id="SUI-09-G0S"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dR-cs-1of" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -632,7 +632,7 @@
         <!--Handyman List View-->
         <scene sceneID="Ysh-VW-MJi">
             <objects>
-                <tableViewController id="TzL-su-AeZ" customClass="HandymanListView" sceneMemberID="viewController">
+                <tableViewController id="TzL-su-AeZ" customClass="HandymanListView" customModule="Guaranteed_Pricing" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MZc-My-jTZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -670,7 +670,7 @@
         <!--Repairs-->
         <scene sceneID="T6g-md-Thx">
             <objects>
-                <navigationController title="Repairs" automaticallyAdjustsScrollViewInsets="NO" id="Yuo-WE-tfK" customClass="Repairs" customModule="Guaranteed_Pricing" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController title="Repairs" automaticallyAdjustsScrollViewInsets="NO" id="Yuo-WE-tfK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Repair" id="j64-iA-ASe"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -735,7 +735,7 @@
         <!--Repairs List View-->
         <scene sceneID="OEo-fu-Xm9">
             <objects>
-                <tableViewController id="LA2-dr-Rq1" customClass="RepairsListView" sceneMemberID="viewController">
+                <tableViewController id="LA2-dr-Rq1" customClass="RepairsListView" customModule="Guaranteed_Pricing" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kGD-Lv-EqP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

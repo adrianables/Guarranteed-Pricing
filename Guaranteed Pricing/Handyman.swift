@@ -98,7 +98,7 @@ class Handyman: UITableViewController {
         if let indexPath = self.tableView.indexPathForSelectedRow {
             let item = self.items[indexPath.row]
             
-            let destination: AllListView = segue.destinationViewController as! AllListView
+            let destination: HandymanListView = segue.destinationViewController as! HandymanListView
             destination.item = item
         }
     }
