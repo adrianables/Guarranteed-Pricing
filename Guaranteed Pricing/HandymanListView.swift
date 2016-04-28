@@ -7,6 +7,7 @@
 //
 
 import Foundation
+<<<<<<< HEAD
 import UIKit
 import Firebase
 
@@ -93,3 +94,5 @@ class HandymanListView: UITableViewController {
 
 
 
+=======
+>>>>>>> parent of 8284f6c... Fix Tab Functionality

@@ -6,6 +6,14 @@
 //  Copyright © 2016 DePauw. All rights reserved.
 //
 
+//
+//  AllListView.swift
+//  Guaranteed Pricing
+//
+//  Created by DePauw on 4/14/16.
+//  Copyright © 2016 DePauw. All rights reserved.
+//
+
 import Foundation
 import UIKit
 import Firebase
