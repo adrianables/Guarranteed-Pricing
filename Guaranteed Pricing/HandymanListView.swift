@@ -14,7 +14,7 @@ class HandymanListView: UITableViewController {
     
     @IBOutlet var Description: UILabel!
     
-    var item: Service?
+    var item: Service4?
     let cellIdentifier = "item"
     
     override func viewDidLoad(){

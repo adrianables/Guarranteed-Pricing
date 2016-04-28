@@ -70,11 +70,9 @@ class HVACListView: UITableViewController {
             case 15: name = "annual_part_increase"
             description = item.annual_part_increase
                 
-                
             default: name = "error"
             description = "error"
             }
-            
             
             cell.textLabel?.text = name
             cell.detailTextLabel?.text = description
@@ -82,12 +80,6 @@ class HVACListView: UITableViewController {
         
         return cell
     }
-    
-    //    // onclick printing
-    //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    //        print(items[indexPath.row])
-    //        self.performSegueWithIdentifier("CellIdentifier", sender: self)
-    //    }
 }
 
 

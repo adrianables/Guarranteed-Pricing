@@ -14,7 +14,7 @@ class PlumbingListView: UITableViewController {
     
     @IBOutlet var Description: UILabel!
     
-    var item: Service?
+    var item: Service3?
     let cellIdentifier = "item"
     
     override func viewDidLoad(){

@@ -10,11 +10,28 @@ import Foundation
 import UIKit
 import Firebase
 
-
+struct Service3 {
+    var name: String
+    var description: String
+    var hours: String
+    var type: String
+    var estimated_payment: String
+    var ge_min_payment: String
+    var hourly_rate: String
+    var income_category: String
+    var part_cost: String
+    var part_markup: String
+    var standard_price: String
+    var task_number: String
+    var ttsp_price: String
+    var ttsp_savings: String
+    var agreement_discount: String
+    var annual_part_increase: String
+}
 
 class Plumbing: UITableViewController {
     
-    var items: [Service] = []
+    var items: [Service3] = []
     let cellIdentifier = "item"
     
     @IBOutlet var Description : UITextField!
@@ -46,7 +63,7 @@ class Plumbing: UITableViewController {
                 let hourly_rate = child.value!!.objectForKey("hourly_rate") as! String
                 
                 
-                let service = Service(name: name, description: description, hours: hours, type: type, estimated_payment: estimated_payment, ge_min_payment: ge_min_payment, hourly_rate: hourly_rate,income_category: income_category, part_cost: part_cost, part_markup: part_mark_up, standard_price: standard_price,  task_number: task_number, ttsp_price: ttsp_price, ttsp_savings: ttsp_savings, agreement_discount: agreement_discount,  annual_part_increase: annual_part_increase)
+                let service = Service3(name: name, description: description, hours: hours, type: type, estimated_payment: estimated_payment, ge_min_payment: ge_min_payment, hourly_rate: hourly_rate,income_category: income_category, part_cost: part_cost, part_markup: part_mark_up, standard_price: standard_price,  task_number: task_number, ttsp_price: ttsp_price, ttsp_savings: ttsp_savings, agreement_discount: agreement_discount,  annual_part_increase: annual_part_increase)
                 
                 self.items.append(service)
 
@@ -82,10 +99,10 @@ class Plumbing: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         
         // Fetch Fruit
-        let item = items[indexPath.row]
+        let Item = items[indexPath.row]
         
         // Configure Cell
-        cell.textLabel?.text = item.name
+        cell.textLabel?.text = Item.name
         return cell
     }
     

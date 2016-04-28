@@ -34,7 +34,7 @@ class Repairs: UITableViewController {
                 let type = child.value!!.objectForKey("type") as! String
                 let agreement_discount = child.value!!.objectForKey("agreement_discount") as! String
                 let annual_part_increase = child.value!!.objectForKey("annual_part_increase") as! String
-                let estimated_payment = child.value!!.objectForKey("estimated_payement") as! String
+                let estimated_payment = child.value!!.objectForKey("estimated_payment") as! String
                 let ge_min_payment = child.value!!.objectForKey("ge_min_payment") as! String
                 let income_category = child.value!!.objectForKey("income_category") as! String
                 let part_cost = child.value!!.objectForKey("part_cost") as! String
