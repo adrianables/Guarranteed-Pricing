@@ -82,13 +82,4 @@ class AllListView: UITableViewController {
         
         return cell
     }
-    
-    //    // onclick printing
-    //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    //        print(items[indexPath.row])
-    //        self.performSegueWithIdentifier("CellIdentifier", sender: self)
-    //    }
 }
-    
-
-

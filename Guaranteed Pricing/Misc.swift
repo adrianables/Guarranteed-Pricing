@@ -27,8 +27,7 @@ class Misc: UITableViewController {
         ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
             for child in snapshot.children {
                 
-                
-                let name = child.value!!.objectForKey("name") as! String
+                let name = child.key!! as String
                 let description = child.value!!.objectForKey("description") as! String
                 let hours = child.value!!.objectForKey("hours") as! String
                 let type = child.value!!.objectForKey("type") as! String

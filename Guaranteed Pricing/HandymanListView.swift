@@ -7,7 +7,6 @@
 //
 
 import Foundation
-<<<<<<< HEAD
 import UIKit
 import Firebase
 
@@ -15,7 +14,7 @@ class HandymanListView: UITableViewController {
     
     @IBOutlet var Description: UILabel!
     
-    var item: Service4?
+    var item: Service?
     let cellIdentifier = "item"
     
     override func viewDidLoad(){
@@ -90,9 +89,3 @@ class HandymanListView: UITableViewController {
     //        self.performSegueWithIdentifier("CellIdentifier", sender: self)
     //    }
 }
-
-
-
-
-=======
->>>>>>> parent of 8284f6c... Fix Tab Functionality

@@ -10,29 +10,10 @@ import Foundation
 import UIKit
 import Firebase
 
-struct Service4 {
-    var name: String
-    var description: String
-    var hours: String
-    var type: String
-    var estimated_payment: String
-    var ge_min_payment: String
-    var hourly_rate: String
-    var income_category: String
-    var part_cost: String
-    var part_markup: String
-    var standard_price: String
-    var task_number: String
-    var ttsp_price: String
-    var ttsp_savings: String
-    var agreement_discount: String
-    var annual_part_increase: String
-}
-
 
 class Handyman: UITableViewController {
     
-    var items: [Service4] = []
+    var items: [Service] = []
     let cellIdentifier = "item"
     
     @IBOutlet var Description : UITextField!
@@ -45,8 +26,7 @@ class Handyman: UITableViewController {
         ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
             for child in snapshot.children {
                 
-                
-                let name = child.value!!.objectForKey("name") as! String
+                let name = child.key!! as String
                 let description = child.value!!.objectForKey("description") as! String
                 let hours = child.value!!.objectForKey("hours") as! String
                 let type = child.value!!.objectForKey("type") as! String
@@ -63,31 +43,17 @@ class Handyman: UITableViewController {
                 let ttsp_savings = child.value!!.objectForKey("ttsp_savings") as! String
                 let hourly_rate = child.value!!.objectForKey("hourly_rate") as! String
                 
-                let service = Service4(name: name, description: description, hours: hours, type: type, estimated_payment: estimated_payment, ge_min_payment: ge_min_payment, hourly_rate: hourly_rate,income_category: income_category, part_cost: part_cost, part_markup: part_mark_up, standard_price: standard_price,  task_number: task_number, ttsp_price: ttsp_price, ttsp_savings: ttsp_savings, agreement_discount: agreement_discount,  annual_part_increase: annual_part_increase)
+                let service = Service(name: name, description: description, hours: hours, type: type, estimated_payment: estimated_payment, ge_min_payment: ge_min_payment, hourly_rate: hourly_rate,income_category: income_category, part_cost: part_cost, part_markup: part_mark_up, standard_price: standard_price,  task_number: task_number, ttsp_price: ttsp_price, ttsp_savings: ttsp_savings, agreement_discount: agreement_discount,  annual_part_increase: annual_part_increase)
                 
                 self.items.append(service)
 
             }
-            // do some stuff once
-            //            print(snapshot.value)
             
-            // get these values and put them in the cell's text view. key is more important
-            //            print(snapshot.key)
-            
-            
-            
-            // add to the array and just this array
-            
+            // add to the array
             
             self.tableView!.reloadData()
         })
     }
-    
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //        if segue.identifier == "CellIdentifier" {
-    //            player = Player(name: nameTextField.text!, game: "Chess", rating: 1)
-    //        }
-    //    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -98,19 +64,13 @@ class Handyman: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         
-        // Fetch Fruit
+        // Fetch Information
         let item = items[indexPath.row]
         
         // Configure Cell
         cell.textLabel?.text = item.name
         return cell
     }
-    
-    //    // onclick printing
-    //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    //        print(items[indexPath.row])
-    //        self.performSegueWithIdentifier("CellIdentifier", sender: self)
-    //    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath = self.tableView.indexPathForSelectedRow {

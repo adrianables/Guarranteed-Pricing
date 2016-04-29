@@ -6,14 +6,6 @@
 //  Copyright © 2016 DePauw. All rights reserved.
 //
 
-//
-//  AllListView.swift
-//  Guaranteed Pricing
-//
-//  Created by DePauw on 4/14/16.
-//  Copyright © 2016 DePauw. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import Firebase
@@ -22,7 +14,7 @@ class PlumbingListView: UITableViewController {
     
     @IBOutlet var Description: UILabel!
     
-    var item: Service3?
+    var item: Service?
     let cellIdentifier = "item"
     
     override func viewDidLoad(){

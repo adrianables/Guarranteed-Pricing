@@ -13,8 +13,9 @@ import Firebase
 class Login: UIViewController {
     @IBOutlet var username : UITextField!
     @IBOutlet var password: UITextField!
-    
-    
+    let myRootRef = Firebase(url:"https://sizzling-inferno-451.firebaseio.com/")
+    let segueIdentifier = "login_successful_segue"
+    var loggedInSuccessfully = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,69 +29,71 @@ class Login: UIViewController {
     
     // Check and see if the current user is logged in, if so, move past this page.
     func getCurrentUser(){
-        let ref = Firebase(url: "https://sizzling-inferno-451.firebaseio.com/")
-        if ref.authData != nil {
+        if myRootRef.authData != nil {
             // user authenticated
-            print(ref.authData)
+            print(myRootRef.authData)
             // user is logged in, check authData for data
-            // TODO: get this below working. Just needs to move from login to next page.
-            self.performSegueWithIdentifier("login_successful_segue", sender: self)
+            self.performSegueWithIdentifier(segueIdentifier, sender: self)
         }
     }
     
     @IBAction func loginAttempt(sender: AnyObject) {
-        // Create a reference to a Firebase location
-        let myRootRef = Firebase(url:"https://sizzling-inferno-451.firebaseio.com/")
-        // Write data to Firebase
-        //myRootRef.setValue("Do you have data? You'll love Firebase.")
         myRootRef.authUser(self.username.text, password: self.password.text) {
             error, authData in
             print("Request returned!");
+            
             if error != nil {
-                // an error occured while attempting login
-                //* Create system error, connection, specific API firebase errors etc etc.
-                //look up UIAlert view controller or msgbox
+                
+                self.loggedInSuccessfully = false
+    
+                var ErrorTitle = ""
+                var ErrorMessage = ""
+                
                 if let errorCode = FAuthenticationError(rawValue: error.code) {
-                    switch (errorCode) {
-                    case .UserDoesNotExist:
-                        print("Handle invalid user")
-                        let refreshAlert = UIAlertController(title: "Refresh", message: "All data will be lost.", preferredStyle: UIAlertControllerStyle.Alert)
-                        
-                        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
-                            print("Handle Ok logic here")
-                        }))
-                    case .InvalidEmail:
-                        print("Handle invalid email")
-                        let refreshAlert = UIAlertController(title: "Refresh", message: "All data will be lost.", preferredStyle: UIAlertControllerStyle.Alert)
-                        
-                        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
-                            print("Handle Ok logic here")
-                        }))
-                    case .InvalidPassword:
-                        print("Handle invalid password")
-                    default:
-                        print("Handle default situation")
+                    
+                    if(errorCode == FAuthenticationError.UserDoesNotExist)
+                    {
+                        ErrorTitle = "User not found"
+                        ErrorMessage = "Unfortunately, our system could not find this user."
                     }
+                    else if(errorCode == FAuthenticationError.InvalidEmail)
+                    {
+                        ErrorTitle = "User not found"
+                        ErrorMessage = "Unfortunately, our system could not find this user."
+                    }
+                    else if(errorCode == FAuthenticationError.InvalidPassword)
+                    {
+                        ErrorTitle = "Incorrect Credentials"
+                        ErrorMessage = "Unfortunately, our system could log you in with that email and password. Please try again."
+                    }
+                    else if(errorCode == FAuthenticationError.NetworkError)
+                    {
+                        ErrorTitle = "Network not found"
+                        ErrorMessage = "Unfortunately, it appears you are not connected to the internet."
+                    }
+                    else
+                    {
+                        ErrorTitle = "Unknown Error"
+                        ErrorMessage = "Unfortunately, we're not sure what went wrong but we're looking into it."
+                    }
+                    
+                    ErrorMessage = ErrorMessage + " If you continue to experience this, please contact the developers at truetechprogrammers@gmail.com"
+                    
+                    let alert = UIAlertController(title: ErrorTitle, message: ErrorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Button", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
             } else {
                 // user is logged in, check authData for data
-                print("Successful login!");
-                self.performSegueWithIdentifier("login_successful_segue", sender: self)
+                self.loggedInSuccessfully = true
+                self.performSegueWithIdentifier(self.segueIdentifier, sender: self)
+                
             }
             
         }
-        print("Sending request...")
-        
-//        let refreshAlert = UIAlertController(title: "Refresh", message: "All data will be lost.", preferredStyle: UIAlertControllerStyle.Alert)
-//        
-//        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
-//            print("Handle Ok logic here")
-//        }))
-//        
-//        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
-//            print("Handle Cancel Logic here")
-//        }))
-//        
-//        presentViewController(refreshAlert, animated: true, completion: nil)
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String ,sender: AnyObject?) -> Bool {
+        return (identifier == self.segueIdentifier && self.loggedInSuccessfully)
     }
 }

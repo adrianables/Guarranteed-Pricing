@@ -44,7 +44,7 @@ class All: UITableViewController {
         ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
             for child in snapshot.children {
                 
-                let name = child.value!!.objectForKey("name") as! String
+                let name = child.key!! as String
                 let description = child.value!!.objectForKey("description") as! String
                 let hours = child.value!!.objectForKey("hours") as! String
                 let type = child.value!!.objectForKey("type") as! String
@@ -60,8 +60,7 @@ class All: UITableViewController {
                 let ttsp_price = child.value!!.objectForKey("ttsp_price") as! String
                 let ttsp_savings = child.value!!.objectForKey("ttsp_savings") as! String
                 let hourly_rate = child.value!!.objectForKey("hourly_rate") as! String
-
-               
+                
                 let service = Service(name: name, description: description, hours: hours, type: type, estimated_payment: estimated_payment, ge_min_payment: ge_min_payment, hourly_rate: hourly_rate,income_category: income_category, part_cost: part_cost, part_markup: part_mark_up, standard_price: standard_price,  task_number: task_number, ttsp_price: ttsp_price, ttsp_savings: ttsp_savings, agreement_discount: agreement_discount,  annual_part_increase: annual_part_increase)
                 
                 self.items.append(service)
