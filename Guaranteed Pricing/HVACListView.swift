@@ -37,6 +37,7 @@ class HVACListView: UITableViewController {
             var description = ""
             
             switch indexPath.row {
+                
             case 0: name = "Name:"
             description = item.name
             case 1: description = "Description:"
@@ -70,9 +71,13 @@ class HVACListView: UITableViewController {
             case 15: name = "annual_part_increase"
             description = item.annual_part_increase
                 
+                
             default: name = "error"
             description = "error"
             }
+            
+            // set the title of the navigation bar
+            self.title = item.name
             
             cell.textLabel?.text = name
             cell.detailTextLabel?.text = description

@@ -31,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="item" textLabel="C31-Qv-yA3" style="IBUITableViewCellStyleDefault" id="nFn-uh-jfk">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="item" textLabel="C31-Qv-yA3" style="IBUITableViewCellStyleDefault" id="nFn-uh-jfk">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nFn-uh-jfk" id="1wE-D6-LaJ">
@@ -58,7 +58,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="LhT-lb-8yn"/>
-                    <navigationItem key="navigationItem" id="6Y2-kO-jIc"/>
+                    <navigationItem key="navigationItem" title="True Tech Home Services" id="6Y2-kO-jIc"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYr-J4-iW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -285,7 +285,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="gYS-vP-nCe"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="pvx-yI-3Xo"/>
+                    <navigationItem key="navigationItem" title="True Tech Home Services" id="pvx-yI-3Xo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M5S-ER-nPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -355,7 +355,7 @@
             </objects>
             <point key="canvasLocation" x="577.86666666666667" y="237.13999999999999"/>
         </scene>
-        <!--Item-->
+        <!--True Tech Home Services-->
         <scene sceneID="FlO-CW-PzH">
             <objects>
                 <tableViewController id="uCh-xT-ytf" customClass="Misc" customModule="Guaranteed_Pricing" customModuleProvider="target" sceneMemberID="viewController">
@@ -388,7 +388,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="e5f-7N-YPU"/>
-                    <navigationItem key="navigationItem" id="RC3-Ig-cB8"/>
+                    <navigationItem key="navigationItem" title="True Tech Home Services" id="RC3-Ig-cB8"/>
                     <connections>
                         <segue destination="vVS-Xf-tFT" kind="push" id="KeN-rL-LHu"/>
                     </connections>
@@ -497,7 +497,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="EkG-Ku-s7m"/>
-                    <navigationItem key="navigationItem" id="kRb-K9-wbh"/>
+                    <navigationItem key="navigationItem" title="True Tech Home Services" id="kRb-K9-wbh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1rS-Ik-7VC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -604,7 +604,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="D8q-kS-pVG"/>
-                    <navigationItem key="navigationItem" id="tqA-Hf-0t8"/>
+                    <navigationItem key="navigationItem" title="True Tech Home Services" id="tqA-Hf-0t8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dR-cs-1of" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -675,7 +675,7 @@
             </objects>
             <point key="canvasLocation" x="569.33333333333337" y="2045.2733333333333"/>
         </scene>
-        <!--Item-->
+        <!--True Tech Home Services-->
         <scene sceneID="BHk-KJ-fx5">
             <objects>
                 <tableViewController id="RlA-0H-IpN" customClass="Repairs" customModule="Guaranteed_Pricing" customModuleProvider="target" sceneMemberID="viewController">
@@ -708,7 +708,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="WW0-7T-bWW"/>
-                    <navigationItem key="navigationItem" id="ICm-2y-JPm"/>
+                    <navigationItem key="navigationItem" title="True Tech Home Services" id="ICm-2y-JPm"/>
                     <connections>
                         <segue destination="LA2-dr-Rq1" kind="push" id="nnk-ct-n3l"/>
                     </connections>
