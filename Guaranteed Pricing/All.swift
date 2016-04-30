@@ -80,11 +80,11 @@ class All: UITableViewController {
         })
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "CellIdentifier" {
-//            player = Player(name: nameTextField.text!, game: "Chess", rating: 1)
-//        }
-//    }
+    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //        if segue.identifier == "CellIdentifier" {
+    //            player = Player(name: nameTextField.text!, game: "Chess", rating: 1)
+    //        }
+    //    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -103,11 +103,11 @@ class All: UITableViewController {
         return cell
     }
     
-//    // onclick printing
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        print(items[indexPath.row])
-//        self.performSegueWithIdentifier("CellIdentifier", sender: self)
-//    }
+    //    // onclick printing
+    //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    //        print(items[indexPath.row])
+    //        self.performSegueWithIdentifier("CellIdentifier", sender: self)
+    //    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath = self.tableView.indexPathForSelectedRow {

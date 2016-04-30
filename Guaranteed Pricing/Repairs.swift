@@ -48,7 +48,7 @@ class Repairs: UITableViewController {
                 let service = Service(name: name, description: description, hours: hours, type: type, estimated_payment: estimated_payment, ge_min_payment: ge_min_payment, hourly_rate: hourly_rate,income_category: income_category, part_cost: part_cost, part_markup: part_mark_up, standard_price: standard_price,  task_number: task_number, ttsp_price: ttsp_price, ttsp_savings: ttsp_savings, agreement_discount: agreement_discount,  annual_part_increase: annual_part_increase)
                 
                 self.items.append(service)
-
+                
             }
             // do some stuff once
             //            print(snapshot.value)

@@ -45,7 +45,7 @@ class Login: UIViewController {
             if error != nil {
                 
                 self.loggedInSuccessfully = false
-    
+                
                 var ErrorTitle = ""
                 var ErrorMessage = ""
                 
