@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D22BC00A1CD44CBD00FF7203 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22BC0091CD44CBD00FF7203 /* App.swift */; };
 		D2329F6C1C961A9100780030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2329F6B1C961A9100780030 /* AppDelegate.swift */; };
 		D2329F731C961A9100780030 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2329F711C961A9100780030 /* Main.storyboard */; };
 		D2329F751C961A9100780030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2329F741C961A9100780030 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D22BC0091CD44CBD00FF7203 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D2329F681C961A9100780030 /* Guaranteed Pricing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guaranteed Pricing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2329F6B1C961A9100780030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2329F721C961A9100780030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				D2329F741C961A9100780030 /* Assets.xcassets */,
 				D2329F761C961A9100780030 /* LaunchScreen.storyboard */,
 				D2329F791C961A9100780030 /* Info.plist */,
+				D22BC0091CD44CBD00FF7203 /* App.swift */,
 			);
 			path = "Guaranteed Pricing";
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				D2FF6ADA1CA07A9D00689B7D /* Misc..swift in Sources */,
 				D2FF6AD41CA079E300689B7D /* Plumbing.swift in Sources */,
 				D2F2C43D1CCD5F6100793DA5 /* ReachabiltyListView.swift in Sources */,
+				D22BC00A1CD44CBD00FF7203 /* App.swift in Sources */,
 				D2F2C4331CCD5E2E00793DA5 /* HVACListView.swift in Sources */,
 				D2C51EBA1CC017E4004905A1 /* AllListView.swift in Sources */,
 				D2FF6AD81CA07A8800689B7D /* Repairs.swift in Sources */,
