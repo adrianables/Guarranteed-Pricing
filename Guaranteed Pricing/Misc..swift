@@ -8,94 +8,61 @@
 
 import Foundation
 import UIKit
-import Firebase
-
-
 
 class Misc: UITableViewController {
     
-    var items: [Service] = []
     let cellIdentifier = "item"
-    
-    @IBOutlet var Description : UITextField!
-    
+    let instanceOfApp = App()
+    var miscArray:[Service] = []
     
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        let ref = Firebase(url:"https://sizzling-inferno-451.firebaseio.com/services")
-        ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
-            for child in snapshot.children {
-                
-                let name = child.key!! as String
-                let description = child.value!!.objectForKey("description") as! String
-                let hours = child.value!!.objectForKey("hours") as! String
-                let type = child.value!!.objectForKey("type") as! String
-                let agreement_discount = child.value!!.objectForKey("agreement_discount") as! String
-                let annual_part_increase = child.value!!.objectForKey("annual_part_increase") as! String
-                let estimated_payment = child.value!!.objectForKey("estimated_payment") as! String
-                let ge_min_payment = child.value!!.objectForKey("ge_min_payment") as! String
-                let income_category = child.value!!.objectForKey("income_category") as! String
-                let part_cost = child.value!!.objectForKey("part_cost") as! String
-                let part_mark_up = child.value!!.objectForKey("part_mark_up") as! String
-                let standard_price = child.value!!.objectForKey("standard_price") as! String
-                let task_number = child.value!!.objectForKey("task_number") as! String
-                let ttsp_price = child.value!!.objectForKey("ttsp_price") as! String
-                let ttsp_savings = child.value!!.objectForKey("ttsp_savings") as! String
-                let hourly_rate = child.value!!.objectForKey("hourly_rate") as! String
-                
-                let service = Service(name: name, description: description, hours: hours, type: type, estimated_payment: estimated_payment, ge_min_payment: ge_min_payment, hourly_rate: hourly_rate,income_category: income_category, part_cost: part_cost, part_markup: part_mark_up, standard_price: standard_price,  task_number: task_number, ttsp_price: ttsp_price, ttsp_savings: ttsp_savings, agreement_discount: agreement_discount,  annual_part_increase: annual_part_increase)
-                
-                self.items.append(service)
-                
-            }
-            // do some stuff once
-            //            print(snapshot.value)
-            
-            // get these values and put them in the cell's text view. key is more important
-            //            print(snapshot.key)
-            
-            
-            
-            // add to the array and just this array
-            
-            
-            self.tableView!.reloadData()
-        })
+        // add a listener for the async call to activate refreshList()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyTableView", object: nil)
+        
+        // call async method in App.swift to download all of the content from the database
+        instanceOfApp.downloadAllObjects()
     }
     
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //        if segue.identifier == "CellIdentifier" {
-    //            player = Player(name: nameTextField.text!, game: "Chess", rating: 1)
-    //        }
-    //    }
+    /** refreshList is called when the async call from App.swift is finished */
+    func refreshList(notification: NSNotification){
+        
+        // clear the local array if already containing items
+        if(miscArray.count > 0)
+        {
+            miscArray.removeAll()
+        }
+        
+        // loop through the array and get all the needed objects for this type
+        for var i = 0; i < instanceOfApp.serviceArray.count; ++i {
+            
+            if(instanceOfApp.serviceArray[i].type == instanceOfApp.repairsTypeString)
+            {
+                miscArray.append(instanceOfApp.serviceArray[i])
+            }
+        }
+        
+        // load the table
+        self.tableView!.reloadData()
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return miscArray.count
     }
-    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
-        
-        // Fetch Fruit
-        let item = items[indexPath.row]
-        
-        // Configure Cell
+        let item = miscArray[indexPath.row]
         cell.textLabel?.text = item.name
+        
         return cell
     }
     
-    //    // onclick printing
-    //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    //        print(items[indexPath.row])
-    //        self.performSegueWithIdentifier("CellIdentifier", sender: self)
-    //    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath = self.tableView.indexPathForSelectedRow {
-            let item = self.items[indexPath.row]
+            let item = miscArray[indexPath.row]
             
             let destination: AllListView = segue.destinationViewController as! AllListView
             destination.item = item

@@ -40,6 +40,21 @@ class App {
     /** cartArray contains all the objects currently in the cart for checkout */
     var cartArray: [Service] = []
     
+    /** define the string for the hvac type */
+    let hvacTypeString = "hvac"
+    
+    /** define the string for the plumbing type */
+    let plumbingTypeString = "plumbing"
+    
+    /** define the string for the handyman type */
+    let handymanTypeString = "handyman"
+    
+    /** define the string for the repairs type */
+    let repairsTypeString = "repairs"
+    
+    /** define the string for the misc type */
+    let miscTypeString = "miscellaneous"
+    
     /**
      * downloadAllObject
      *

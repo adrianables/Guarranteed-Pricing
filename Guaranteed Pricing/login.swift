@@ -30,8 +30,10 @@ class Login: UIViewController {
     // Check and see if the current user is logged in, if so, move past this page.
     func getCurrentUser(){
         if myRootRef.authData != nil {
+            
             // user authenticated
             print(myRootRef.authData)
+            
             // user is logged in, check authData for data
             self.performSegueWithIdentifier(segueIdentifier, sender: self)
         }
