@@ -31,6 +31,11 @@ struct Service {
 
 class App {
     
+    /** Singleton reference */
+    static let sharedInstance = App()
+    
+    private init() {}
+    
     /** firebaseRef contains the root reference to the firebase database */
     let firebaseRef = Firebase(url:"https://sizzling-inferno-451.firebaseio.com")
     
@@ -54,6 +59,23 @@ class App {
     
     /** define the string for the misc type */
     let miscTypeString = "miscellaneous"
+    
+    let cellIdentifier = "item"
+    
+    /** This function returns array of all the objects by a given type string */
+    func getAllObjectsByType(type: String) -> [Service]
+    {
+        var tempArray: [Service] = []
+        
+        for var i = 0; i < self.serviceArray.count; ++i
+        {
+            if(self.serviceArray[i].type == type)
+            {
+                tempArray.append(self.serviceArray[i])
+            }
+        }
+        return tempArray
+    }
     
     /**
      * downloadAllObject

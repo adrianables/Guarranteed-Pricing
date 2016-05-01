@@ -11,50 +11,18 @@ import UIKit
 
 class Plumbing: UITableViewController {
     
-    let cellIdentifier = "item"
-    let instanceOfApp = App()
-    var plumbingArray: [Service] = []
-    
     override func viewDidLoad(){
         super.viewDidLoad()
-        
-        // add a listener for the async call to activate refreshList()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyTableView", object: nil)
-        
-        // call async method in App.swift to download all of the content from the database
-        instanceOfApp.downloadAllObjects()
-    }
-    
-    /** refreshList is called when the async call from App.swift is finished */
-    func refreshList(notification: NSNotification){
-        
-        // clear the local array if already containing items
-        if(plumbingArray.count > 0)
-        {
-            plumbingArray.removeAll()
-        }
-        
-        // loop through the array and get all the needed objects for this type
-        for var i = 0; i < instanceOfApp.serviceArray.count; ++i {
-            
-            if(instanceOfApp.serviceArray[i].type == instanceOfApp.plumbingTypeString)
-            {
-                plumbingArray.append(instanceOfApp.serviceArray[i])
-            }
-        }
-        
-        // load the table
-        self.tableView!.reloadData()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return plumbingArray.count
+        return App.sharedInstance.getAllObjectsByType(App.sharedInstance.plumbingTypeString).count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
-        let item = plumbingArray[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier(App.sharedInstance.cellIdentifier, forIndexPath: indexPath)
+        let item = App.sharedInstance.getAllObjectsByType(App.sharedInstance.plumbingTypeString)[indexPath.row]
         cell.textLabel?.text = item.name
         
         return cell
@@ -62,7 +30,7 @@ class Plumbing: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath = self.tableView.indexPathForSelectedRow {
-            let item = plumbingArray[indexPath.row]
+            let item = App.sharedInstance.getAllObjectsByType(App.sharedInstance.plumbingTypeString)[indexPath.row]
             
             let destination: AllListView = segue.destinationViewController as! AllListView
             destination.item = item

@@ -11,9 +11,6 @@ import UIKit
 
 class All: UITableViewController {
     
-    let cellIdentifier = "item"
-    let instanceOfApp = App()
-    
     override func viewDidLoad(){
         super.viewDidLoad()
         
@@ -21,7 +18,7 @@ class All: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyTableView", object: nil)
         
         // call async method in App.swift to download all of the content from the database
-        instanceOfApp.downloadAllObjects()
+        App.sharedInstance.downloadAllObjects()
     }
     
     /** refreshList is called when the async call from App.swift is finished */
@@ -30,13 +27,13 @@ class All: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return instanceOfApp.serviceArray.count
+        return App.sharedInstance.serviceArray.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
-        let item = instanceOfApp.serviceArray[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier(App.sharedInstance.cellIdentifier, forIndexPath: indexPath)
+        let item = App.sharedInstance.serviceArray[indexPath.row]
         cell.textLabel?.text = item.name
         
         return cell
@@ -44,7 +41,7 @@ class All: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath = self.tableView.indexPathForSelectedRow {
-            let item = instanceOfApp.serviceArray[indexPath.row]
+            let item = App.sharedInstance.serviceArray[indexPath.row]
             
             let destination: AllListView = segue.destinationViewController as! AllListView
             destination.item = item
