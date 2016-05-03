@@ -64,9 +64,16 @@
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cart"/>
+                                <connections>
+                                    <action selector="openCart:" destination="RmT-bi-kPp" eventType="touchUpInside" id="9bn-tm-sBC"/>
+                                    <segue destination="Fhb-gn-JQA" kind="push" id="dfA-s7-Pzn"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cartButton" destination="aQT-rv-fSu" id="dq1-nc-4Gs"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYr-J4-iW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -393,6 +400,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7r-Z8-rDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1659.5" y="-694.5"/>
+        </scene>
+        <!--Email-->
+        <scene sceneID="Z8f-Zc-rTL">
+            <objects>
+                <viewController id="Fhb-gn-JQA" customClass="Email" customModule="Guaranteed_Pricing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nDc-JD-213">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="kvh-Jf-2iU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="True Tech Home Services" id="omq-UV-cU3"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nYm-qJ-j1s">
+                                <rect key="frame" x="0.0" y="44" width="375" height="476"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bz2-L2-rF2">
+                                <rect key="frame" x="154" y="571" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Checkout"/>
+                                <connections>
+                                    <action selector="checkoutButtonClick:" destination="Fhb-gn-JQA" eventType="touchUpInside" id="Zo7-st-RbK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="agb-ew-rUO">
+                                <rect key="frame" x="165" y="534" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BbR-eN-kst"/>
+                    <connections>
+                        <outlet property="checkoutButton" destination="Bz2-L2-rF2" id="gwZ-eG-fw4"/>
+                        <outlet property="checkoutTotal" destination="agb-ew-rUO" id="9yz-PX-bPU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uEb-21-l95" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2152.5" y="-232.5"/>
         </scene>
         <!--Misc.-->
         <scene sceneID="DRC-wZ-mdV">

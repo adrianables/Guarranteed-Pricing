@@ -11,6 +11,8 @@ import UIKit
 
 class All: UITableViewController {
     
+    @IBOutlet weak var cartButton: UIButton!
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         
@@ -19,6 +21,10 @@ class All: UITableViewController {
         
         // call async method in App.swift to download all of the content from the database
         App.sharedInstance.downloadAllObjects()
+    }
+    
+    @IBAction func openCart(sender: AnyObject) {
+        
     }
     
     /** refreshList is called when the async call from App.swift is finished */
