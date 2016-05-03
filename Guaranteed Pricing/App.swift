@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 /** This struct is meant to hold all of the information taken from the firebase database */
-struct Service {
+struct Service  {
     var name: String
     var description: String
     var hours: String
@@ -77,6 +77,52 @@ class App {
         return tempArray
     }
     
+    /**
+    * isInCart
+    *
+    * a boolean function which checks to see if a specific service object is in the array
+    */
+    func isInCart(service: Service) -> Bool {
+        
+        var isInArray = false
+        
+        for var i = 0; i < self.cartArray.count; i++
+        {
+            if(self.cartArray[i].name == service.name)
+            {
+                isInArray = true
+            }
+        }
+        return isInArray
+    }
+    
+    /**
+    * printCart
+    * 
+    * A simple debugger function to help ensure the data is being stored correctly
+    */
+    func printCart(){
+        for var i = 0; i < self.cartArray.count; i++ {
+            print(self.cartArray[i].name)
+        }
+    }
+    
+    /**
+    * removeFromCart
+    *
+    * This function cycles through the array and removes the given service object based on its index
+    */
+    func removeFromCart(service: Service) {
+        for var i = 0; i < self.cartArray.count; i++
+        {
+            if(self.cartArray[i].name == service.name)
+            {
+                self.cartArray.removeAtIndex(i)
+                break
+            }
+        }
+    }
+     
     /**
      * downloadAllObject
      *

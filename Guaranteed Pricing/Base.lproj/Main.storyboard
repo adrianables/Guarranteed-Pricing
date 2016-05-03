@@ -58,7 +58,15 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="LhT-lb-8yn"/>
-                    <navigationItem key="navigationItem" title="True Tech Home Services" id="6Y2-kO-jIc"/>
+                    <navigationItem key="navigationItem" title="True Tech Home Services" id="6Y2-kO-jIc">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="yFv-6X-afE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aQT-rv-fSu">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cart"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYr-J4-iW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,7 +82,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" textLabel="01K-el-f0H" detailTextLabel="BJ0-NH-Eff" style="IBUITableViewCellStyleValue1" id="pDo-GU-FuF">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pDo-GU-FuF" id="NU0-f0-Gwx">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -103,7 +111,21 @@
                             <outlet property="delegate" destination="0O3-oM-lIX" id="uef-vI-FQp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="RMl-yV-rR6"/>
+                    <navigationItem key="navigationItem" id="RMl-yV-rR6">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ZTc-aN-FzI">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3N1-4c-7lJ">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addToCart:" destination="0O3-oM-lIX" eventType="touchUpInside" id="2nu-Dc-4ZJ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="3N1-4c-7lJ" id="FUn-tO-FJL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOW-sB-iIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -320,7 +342,15 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="gYS-vP-nCe"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="True Tech Home Services" id="pvx-yI-3Xo"/>
+                    <navigationItem key="navigationItem" title="True Tech Home Services" id="pvx-yI-3Xo">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="qUt-aj-CqF">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="x6f-Nu-wC2">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cart"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M5S-ER-nPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -415,7 +445,15 @@
                             <outlet property="delegate" destination="uCh-xT-ytf" id="tA8-5n-oPG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="True Tech Home Services" id="RC3-Ig-cB8"/>
+                    <navigationItem key="navigationItem" title="True Tech Home Services" id="RC3-Ig-cB8">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="yh4-ZX-2QD">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YFy-9T-CPr">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cart"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="vVS-Xf-tFT" kind="push" id="KeN-rL-LHu"/>
                     </connections>
@@ -517,7 +555,15 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="EkG-Ku-s7m"/>
-                    <navigationItem key="navigationItem" title="True Tech Home Services" id="kRb-K9-wbh"/>
+                    <navigationItem key="navigationItem" title="True Tech Home Services" id="kRb-K9-wbh">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="9yi-19-cXh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jkA-tI-yf0">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cart"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1rS-Ik-7VC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -616,7 +662,15 @@
                             <outlet property="delegate" destination="25t-Iz-83o" id="Va1-Ud-4JH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="True Tech Home Services" id="tqA-Hf-0t8"/>
+                    <navigationItem key="navigationItem" title="True Tech Home Services" id="tqA-Hf-0t8">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Mws-el-Ucm">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u67-sq-L4y">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cart"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dR-cs-1of" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -716,7 +770,15 @@
                             <outlet property="delegate" destination="RlA-0H-IpN" id="PSJ-Yi-fwV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="True Tech Home Services" id="ICm-2y-JPm"/>
+                    <navigationItem key="navigationItem" title="True Tech Home Services" id="ICm-2y-JPm">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Knd-4x-ljS">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HFR-gL-liK">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cart"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="LA2-dr-Rq1" kind="push" id="nnk-ct-n3l"/>
                     </connections>

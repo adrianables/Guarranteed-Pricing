@@ -12,13 +12,24 @@ import Firebase
 
 class AllListView: UITableViewController {
     
-    @IBOutlet var Description: UILabel!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var cartButton: UIButton!
+    
     
     var item: Service?
     let cellIdentifier = "item"
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        if(App.sharedInstance.isInCart(item!))
+        {
+            addButton.setTitle("−", forState: UIControlState.Normal)
+        }
+        else
+        {
+            addButton.setTitle("+", forState: UIControlState.Normal)
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,6 +39,26 @@ class AllListView: UITableViewController {
         return 0;
     }
     
+    /**
+    * Onclick event handler for the plus and minus sign to add or remove from the cart respectively
+    */
+    @IBAction func addToCart(sender: AnyObject) {
+        
+        if(App.sharedInstance.isInCart(item!) == false)
+        {
+            App.sharedInstance.cartArray.append(item!)
+            addButton.setTitle("−", forState: UIControlState.Normal)
+        }
+        else
+        {
+            App.sharedInstance.removeFromCart(item!)
+            addButton.setTitle("+", forState: UIControlState.Normal)
+        }
+        
+        // debugging tool
+        //App.sharedInstance.printCart()
+        
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
