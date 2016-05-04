@@ -62,6 +62,12 @@ class App {
     
     let cellIdentifier = "item"
     
+    /** define the name of the current technician using the app */
+    var currentUsername = ""
+    
+    /** define the password of the user for the password reset page*/
+    var passwordResetTemp = ""
+    
     /** This function returns array of all the objects by a given type string */
     func getAllObjectsByType(type: String) -> [Service]
     {
@@ -105,6 +111,21 @@ class App {
         for var i = 0; i < self.cartArray.count; i++ {
             print(self.cartArray[i].name)
         }
+    }
+    
+    
+    /** 
+    * getCartTotal
+    *
+    * This function cycles through the cart and gets the double total of each service and returns it.
+    */
+    func getCartTotal() -> Double {
+        var total: Double = 0.0
+        for var i = 0; i < self.cartArray.count; i++
+        {
+            total = total + Double(self.cartArray[i].part_cost)!
+        }
+        return total
     }
     
     /**

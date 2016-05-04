@@ -19,6 +19,12 @@ class HVAC: UITableViewController {
         return App.sharedInstance.getAllObjectsByType(App.sharedInstance.hvacTypeString).count
     }
     
+    
+    @IBAction func logoutButtonClick(sender: UIButton) {
+        App.sharedInstance.firebaseRef.unauth()
+        self.performSegueWithIdentifier("logout", sender: self)
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(App.sharedInstance.cellIdentifier, forIndexPath: indexPath)

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D212AD171CDA5272002C6B10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D212AD151CDA5272002C6B10 /* Main.storyboard */; };
+		D212AD191CDA604B002C6B10 /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = D212AD181CDA604A002C6B10 /* ResetPassword.swift */; };
 		D22BC00A1CD44CBD00FF7203 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22BC0091CD44CBD00FF7203 /* App.swift */; };
 		D2329F6C1C961A9100780030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2329F6B1C961A9100780030 /* AppDelegate.swift */; };
-		D2329F731C961A9100780030 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2329F711C961A9100780030 /* Main.storyboard */; };
 		D2329F751C961A9100780030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2329F741C961A9100780030 /* Assets.xcassets */; };
 		D2329F781C961A9100780030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2329F761C961A9100780030 /* LaunchScreen.storyboard */; };
 		D2329F831C961A9100780030 /* Guaranteed_PricingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2329F821C961A9100780030 /* Guaranteed_PricingTests.swift */; };
@@ -21,6 +22,7 @@
 		D2329FA41C961B6B00780030 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2329FA31C961B6B00780030 /* Security.framework */; };
 		D2329FA61C961B7D00780030 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2329FA51C961B7D00780030 /* SystemConfiguration.framework */; };
 		D26C1D861CD96BBD002B4636 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C1D851CD96BBD002B4636 /* Email.swift */; };
+		D291CF741CDA38E2002B84CE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D291CF731CDA38E2002B84CE /* MessageUI.framework */; };
 		D2C51EBA1CC017E4004905A1 /* AllListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C51EB91CC017E4004905A1 /* AllListView.swift */; };
 		D2F2C4331CCD5E2E00793DA5 /* HVACListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F2C4321CCD5E2E00793DA5 /* HVACListView.swift */; };
 		D2F2C4351CCD5E4E00793DA5 /* PlumbingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F2C4341CCD5E4E00793DA5 /* PlumbingListView.swift */; };
@@ -57,10 +59,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D212AD161CDA5272002C6B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D212AD181CDA604A002C6B10 /* ResetPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 		D22BC0091CD44CBD00FF7203 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D2329F681C961A9100780030 /* Guaranteed Pricing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guaranteed Pricing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2329F6B1C961A9100780030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D2329F721C961A9100780030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2329F741C961A9100780030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2329F771C961A9100780030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2329F791C961A9100780030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		D2329FA31C961B6B00780030 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D2329FA51C961B7D00780030 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D26C1D851CD96BBD002B4636 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
+		D291CF731CDA38E2002B84CE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D2C51EB91CC017E4004905A1 /* AllListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListView.swift; sourceTree = "<group>"; };
 		D2F2C4321CCD5E2E00793DA5 /* HVACListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HVACListView.swift; sourceTree = "<group>"; };
 		D2F2C4341CCD5E4E00793DA5 /* PlumbingListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlumbingListView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D291CF741CDA38E2002B84CE /* MessageUI.framework in Frameworks */,
 				D2329FA61C961B7D00780030 /* SystemConfiguration.framework in Frameworks */,
 				D2329FA41C961B6B00780030 /* Security.framework in Frameworks */,
 				D2329FA21C961B6000780030 /* CFNetwork.framework in Frameworks */,
@@ -129,6 +134,7 @@
 		D2329F5F1C961A9000780030 = {
 			isa = PBXGroup;
 			children = (
+				D291CF731CDA38E2002B84CE /* MessageUI.framework */,
 				D2329FA51C961B7D00780030 /* SystemConfiguration.framework */,
 				D2329FA31C961B6B00780030 /* Security.framework */,
 				D2329FA11C961B6000780030 /* CFNetwork.framework */,
@@ -155,9 +161,9 @@
 		D2329F6A1C961A9100780030 /* Guaranteed Pricing */ = {
 			isa = PBXGroup;
 			children = (
+				D212AD151CDA5272002C6B10 /* Main.storyboard */,
 				D2329F6B1C961A9100780030 /* AppDelegate.swift */,
 				D2FF6ADF1CAC764400689B7D /* ForgotPassword.swift */,
-				D2329F711C961A9100780030 /* Main.storyboard */,
 				D2F2C4321CCD5E2E00793DA5 /* HVACListView.swift */,
 				D2F2C4341CCD5E4E00793DA5 /* PlumbingListView.swift */,
 				D2F2C4361CCD5EBD00793DA5 /* HandymanListView.swift */,
@@ -178,6 +184,7 @@
 				D2329F791C961A9100780030 /* Info.plist */,
 				D22BC0091CD44CBD00FF7203 /* App.swift */,
 				D26C1D851CD96BBD002B4636 /* Email.swift */,
+				D212AD181CDA604A002C6B10 /* ResetPassword.swift */,
 			);
 			path = "Guaranteed Pricing";
 			sourceTree = "<group>";
@@ -305,9 +312,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D212AD171CDA5272002C6B10 /* Main.storyboard in Resources */,
 				D2329F781C961A9100780030 /* LaunchScreen.storyboard in Resources */,
 				D2329F751C961A9100780030 /* Assets.xcassets in Resources */,
-				D2329F731C961A9100780030 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +351,7 @@
 				D2F2C43D1CCD5F6100793DA5 /* ReachabiltyListView.swift in Sources */,
 				D22BC00A1CD44CBD00FF7203 /* App.swift in Sources */,
 				D2F2C4331CCD5E2E00793DA5 /* HVACListView.swift in Sources */,
+				D212AD191CDA604B002C6B10 /* ResetPassword.swift in Sources */,
 				D2C51EBA1CC017E4004905A1 /* AllListView.swift in Sources */,
 				D2FF6AD81CA07A8800689B7D /* Repairs.swift in Sources */,
 				D2FF6ADC1CA07C4300689B7D /* Reachability.swift in Sources */,
@@ -386,10 +394,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D2329F711C961A9100780030 /* Main.storyboard */ = {
+		D212AD151CDA5272002C6B10 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2329F721C961A9100780030 /* Base */,
+				D212AD161CDA5272002C6B10 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

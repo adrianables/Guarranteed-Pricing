@@ -22,6 +22,13 @@ class All: UITableViewController {
         // call async method in App.swift to download all of the content from the database
         App.sharedInstance.downloadAllObjects()
     }
+
+    
+    @IBAction func logoutButton(sender: UIButton) {
+        App.sharedInstance.firebaseRef.unauth()
+        self.performSegueWithIdentifier("logout", sender: self)
+    }
+    
     
     @IBAction func openCart(sender: AnyObject) {
         
@@ -31,6 +38,8 @@ class All: UITableViewController {
     func refreshList(notification: NSNotification){
         self.tableView!.reloadData()
     }
+    
+    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return App.sharedInstance.serviceArray.count

@@ -58,7 +58,18 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="LhT-lb-8yn"/>
-                    <navigationItem key="navigationItem" title="True Tech Home Services" id="6Y2-kO-jIc">
+                    <navigationItem key="navigationItem" title="True Tech" id="6Y2-kO-jIc">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="qEO-0k-Y25">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sSz-as-Vwf">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="RmT-bi-kPp" eventType="touchUpInside" id="pVm-fC-bwh"/>
+                                    <segue destination="jz1-UL-toT" kind="modal" identifier="logout" id="174-xc-OTi"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="yFv-6X-afE">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aQT-rv-fSu">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
@@ -164,14 +175,6 @@
                                     <segue destination="mJH-G5-zG5" kind="modal" identifier="login_successful_segue" id="XO1-NP-PnH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oHu-Sj-POX">
-                                <rect key="frame" x="124" y="487" width="126" height="30"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Forgot Password?"/>
-                                <connections>
-                                    <segue destination="sPI-c8-xWA" kind="modal" id="tyR-5T-vfj"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" id="NyD-T7-XFs">
                                 <rect key="frame" x="67" y="167" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -182,13 +185,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Iah-qs-zC1">
+                                <rect key="frame" x="126" y="496" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Forgot Password?"/>
+                                <connections>
+                                    <action selector="forgotPassClick:" destination="jz1-UL-toT" eventType="touchUpInside" id="2jY-bd-Ebh"/>
+                                    <segue destination="sPI-c8-xWA" kind="modal" identifier="forgot_password" id="djM-qi-GC8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dIk-Gf-WrM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="forgotPassword" destination="Iah-qs-zC1" id="nd2-TG-bxT"/>
                         <outlet property="password" destination="Ned-3K-1tH" id="XiI-vx-aVF"/>
                         <outlet property="username" destination="PfL-ZW-kkP" id="faR-WR-GUr"/>
+                        <segue destination="v22-EA-MTG" kind="modal" identifier="reset_password" id="1HH-We-p7G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgx-9o-AEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -213,7 +228,6 @@
                                 </state>
                                 <connections>
                                     <action selector="retrievePasswordButton:" destination="sPI-c8-xWA" eventType="touchUpInside" id="L2p-FL-ut9"/>
-                                    <segue destination="jz1-UL-toT" kind="modal" id="Uyc-ge-3vY"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" id="5UL-Vb-cWF">
@@ -222,52 +236,82 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" id="rfh-RA-Efd">
+                                <rect key="frame" x="67" y="189" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="odm-By-37k">
+                                <rect key="frame" x="170" y="471" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonClcik:" destination="sPI-c8-xWA" eventType="touchUpInside" id="14a-Bj-t9c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yEG-d5-a8k"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="backButton" destination="odm-By-37k" id="eiH-9Y-Hcs"/>
                         <outlet property="email" destination="5UL-Vb-cWF" id="gxl-CY-weX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ira-R8-W6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1097.5" y="1085.5"/>
+            <point key="canvasLocation" x="-2208.5" y="1127.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="W7K-Ah-Iut">
+        <!--Reset Password-->
+        <scene sceneID="o44-lx-dgg">
             <objects>
-                <viewController id="DzV-sP-BMP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="baY-Cc-vNH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <viewController id="v22-EA-MTG" customClass="ResetPassword" customModule="Guaranteed_Pricing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JTu-jq-Ryc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="29" sectionFooterHeight="28" id="MmL-PS-eUW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" id="A9j-2L-D1g">
+                                <rect key="frame" x="40" y="191" width="295" height="150"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eao-Ha-iOk">
+                                <rect key="frame" x="20" y="481" width="335" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="SMy-bQ-1ZP">
-                                        <rect key="frame" x="0.0" y="29" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SMy-bQ-1ZP" id="5ax-rO-p5N">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                                <color key="backgroundColor" red="0.078141267779999996" green="0.58447100259999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.33640947939999999" green="0.69592678549999998" blue="0.69674885269999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Change Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outlet property="dataSource" destination="DzV-sP-BMP" id="XU0-1E-LxK"/>
-                                    <outlet property="delegate" destination="DzV-sP-BMP" id="bn3-ZJ-x39"/>
+                                    <action selector="changePasswordClick:" destination="v22-EA-MTG" eventType="touchUpInside" id="hyN-yq-QIQ"/>
                                 </connections>
-                            </tableView>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" id="0Z9-aH-zht">
+                                <rect key="frame" x="20" y="378" width="335" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" id="ez0-1c-pAK">
+                                <rect key="frame" x="20" y="429" width="335" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="changePasswordButton" destination="eao-Ha-iOk" id="IQ3-L8-3kg"/>
+                        <outlet property="newPassword" destination="0Z9-aH-zht" id="vey-8u-8Jl"/>
+                        <outlet property="newPasswordConfirm" destination="ez0-1c-pAK" id="Usf-30-Uxw"/>
+                        <segue destination="mJH-G5-zG5" kind="modal" identifier="reset_successful" id="eHr-MC-xKR"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nzU-GW-tVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ElY-84-Rod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1748" y="1633"/>
+            <point key="canvasLocation" x="-1639.5" y="1127.5"/>
         </scene>
         <!--Navigation Bar-->
         <scene sceneID="Dca-o6-A1O">
@@ -332,7 +376,7 @@
                                             <rect key="frame" x="15" y="0.0" width="325" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -349,12 +393,26 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="gYS-vP-nCe"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="True Tech Home Services" id="pvx-yI-3Xo">
+                    <navigationItem key="navigationItem" title="True Tech" id="pvx-yI-3Xo">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Gfk-ja-Rrn">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DjP-un-pXH">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonClick:" destination="T8g-Eh-l2y" eventType="touchUpInside" id="jJJ-eU-PTp"/>
+                                    <segue destination="jz1-UL-toT" kind="modal" identifier="logout" id="i4v-rD-01j"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="qUt-aj-CqF">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="x6f-Nu-wC2">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cart"/>
+                                <connections>
+                                    <segue destination="Fhb-gn-JQA" kind="push" id="qt0-rq-63d"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -372,7 +430,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" textLabel="kER-vl-Ogs" style="IBUITableViewCellStyleDefault" id="1Gj-DR-sH3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" textLabel="kER-vl-Ogs" detailTextLabel="x99-zG-fb2" style="IBUITableViewCellStyleValue1" id="1Gj-DR-sH3">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Gj-DR-sH3" id="Fwy-DB-fIt">
@@ -380,10 +438,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kER-vl-Ogs">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x99-zG-fb2">
+                                            <rect key="frame" x="318" y="12" width="42" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -401,10 +466,10 @@
             </objects>
             <point key="canvasLocation" x="1659.5" y="-694.5"/>
         </scene>
-        <!--Email-->
+        <!--Email View-->
         <scene sceneID="Z8f-Zc-rTL">
             <objects>
-                <viewController id="Fhb-gn-JQA" customClass="Email" customModule="Guaranteed_Pricing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Email View" id="Fhb-gn-JQA" customClass="Email" customModule="Guaranteed_Pricing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nDc-JD-213">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -417,23 +482,37 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nYm-qJ-j1s">
-                                <rect key="frame" x="0.0" y="44" width="375" height="476"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="450"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Fzd-4X-nsQ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fzd-4X-nsQ" id="9l9-fQ-x6G">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Fhb-gn-JQA" id="sNm-UR-gn5"/>
+                                    <outlet property="delegate" destination="Fhb-gn-JQA" id="CEq-dn-6GT"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bz2-L2-rF2">
                                 <rect key="frame" x="154" y="571" width="66" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Checkout"/>
                                 <connections>
-                                    <action selector="checkoutButtonClick:" destination="Fhb-gn-JQA" eventType="touchUpInside" id="Zo7-st-RbK"/>
+                                    <action selector="emailAction:" destination="Fhb-gn-JQA" eventType="touchUpInside" id="tL0-Ob-XOE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="agb-ew-rUO">
-                                <rect key="frame" x="165" y="534" width="45" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="agb-ew-rUO">
+                                <rect key="frame" x="20" y="534" width="335" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -441,8 +520,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="BbR-eN-kst"/>
                     <connections>
-                        <outlet property="checkoutButton" destination="Bz2-L2-rF2" id="gwZ-eG-fw4"/>
-                        <outlet property="checkoutTotal" destination="agb-ew-rUO" id="9yz-PX-bPU"/>
+                        <outlet property="check" destination="Bz2-L2-rF2" id="hL1-hP-KJ4"/>
+                        <outlet property="tableView" destination="nYm-qJ-j1s" id="UIL-sk-wOb"/>
+                        <outlet property="total" destination="agb-ew-rUO" id="7mE-hg-Aqq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEb-21-l95" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -468,7 +548,7 @@
             </objects>
             <point key="canvasLocation" x="577.86666666666667" y="237.13999999999999"/>
         </scene>
-        <!--True Tech Home Services-->
+        <!--True Tech-->
         <scene sceneID="FlO-CW-PzH">
             <objects>
                 <tableViewController id="uCh-xT-ytf" customClass="Misc" customModule="Guaranteed_Pricing" customModuleProvider="target" sceneMemberID="viewController">
@@ -477,15 +557,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="2zv-Us-2hE" style="IBUITableViewCellStyleDefault" id="6IU-R3-l3s">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="item" textLabel="2zv-Us-2hE" style="IBUITableViewCellStyleDefault" id="6IU-R3-l3s">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6IU-R3-l3s" id="m01-Rr-N7e">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2zv-Us-2hE">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="325" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -500,12 +580,26 @@
                             <outlet property="delegate" destination="uCh-xT-ytf" id="tA8-5n-oPG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="True Tech Home Services" id="RC3-Ig-cB8">
+                    <navigationItem key="navigationItem" title="True Tech" id="RC3-Ig-cB8">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Dso-q5-eJh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Eec-Gp-OJe">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonClick:" destination="uCh-xT-ytf" eventType="touchUpInside" id="Q1r-UV-gbV"/>
+                                    <segue destination="jz1-UL-toT" kind="modal" identifier="logout" id="oZR-iJ-SSA"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="yh4-ZX-2QD">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YFy-9T-CPr">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cart"/>
+                                <connections>
+                                    <segue destination="Fhb-gn-JQA" kind="push" id="Puk-pm-P0i"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -526,7 +620,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" textLabel="hgt-Yh-Yo2" style="IBUITableViewCellStyleDefault" id="zJ7-nS-tIq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" textLabel="hgt-Yh-Yo2" detailTextLabel="jqT-TO-vUh" style="IBUITableViewCellStyleValue1" id="zJ7-nS-tIq">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zJ7-nS-tIq" id="G1f-gh-Rl1">
@@ -534,10 +628,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hgt-Yh-Yo2">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jqT-TO-vUh">
+                                            <rect key="frame" x="318" y="12" width="42" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -610,12 +711,26 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="EkG-Ku-s7m"/>
-                    <navigationItem key="navigationItem" title="True Tech Home Services" id="kRb-K9-wbh">
+                    <navigationItem key="navigationItem" title="True Tech" id="kRb-K9-wbh">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Kur-kp-9sD">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lfp-rx-2Dd">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonClick:" destination="aPF-hr-nXC" eventType="touchUpInside" id="VFx-Sg-ONS"/>
+                                    <segue destination="jz1-UL-toT" kind="modal" identifier="logout" id="CNG-JU-sjC"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="9yi-19-cXh">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jkA-tI-yf0">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cart"/>
+                                <connections>
+                                    <segue destination="Fhb-gn-JQA" kind="push" id="0Rg-pb-hvT"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -633,7 +748,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" textLabel="2Kp-Xo-mbz" style="IBUITableViewCellStyleDefault" id="gPw-X9-CTN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" textLabel="2Kp-Xo-mbz" detailTextLabel="BYK-mV-2vW" style="IBUITableViewCellStyleValue1" id="gPw-X9-CTN">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gPw-X9-CTN" id="wAu-1t-88a">
@@ -641,10 +756,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Kp-Xo-mbz">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BYK-mV-2vW">
+                                            <rect key="frame" x="318" y="12" width="42" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -682,7 +804,7 @@
             </objects>
             <point key="canvasLocation" x="577.5" y="1136.5"/>
         </scene>
-        <!--True Tech Home Services-->
+        <!--True Tech-->
         <scene sceneID="nbq-qV-GDL">
             <objects>
                 <tableViewController id="25t-Iz-83o" customClass="Handyman" customModule="Guaranteed_Pricing" customModuleProvider="target" sceneMemberID="viewController">
@@ -717,12 +839,26 @@
                             <outlet property="delegate" destination="25t-Iz-83o" id="Va1-Ud-4JH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="True Tech Home Services" id="tqA-Hf-0t8">
+                    <navigationItem key="navigationItem" title="True Tech" id="tqA-Hf-0t8">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="kMI-VJ-dxk">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="C8Y-oE-Go6">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonClick:" destination="25t-Iz-83o" eventType="touchUpInside" id="sVJ-5B-yHI"/>
+                                    <segue destination="jz1-UL-toT" kind="modal" identifier="logout" id="EoP-rF-li0"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Mws-el-Ucm">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u67-sq-L4y">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cart"/>
+                                <connections>
+                                    <segue destination="Fhb-gn-JQA" kind="push" id="4j9-K5-8qN"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -740,7 +876,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" textLabel="Iid-Lf-6v7" style="IBUITableViewCellStyleDefault" id="lvv-Qb-gyB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" textLabel="Iid-Lf-6v7" detailTextLabel="JLF-IN-ovD" style="IBUITableViewCellStyleValue1" id="lvv-Qb-gyB">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lvv-Qb-gyB" id="ZYB-YU-7yD">
@@ -748,10 +884,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iid-Lf-6v7">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JLF-IN-ovD">
+                                            <rect key="frame" x="318" y="12" width="42" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -789,7 +932,7 @@
             </objects>
             <point key="canvasLocation" x="569.33333333333337" y="2045.2733333333333"/>
         </scene>
-        <!--True Tech Home Services-->
+        <!--True Tech-->
         <scene sceneID="BHk-KJ-fx5">
             <objects>
                 <tableViewController id="RlA-0H-IpN" customClass="Repairs" customModule="Guaranteed_Pricing" customModuleProvider="target" sceneMemberID="viewController">
@@ -825,12 +968,26 @@
                             <outlet property="delegate" destination="RlA-0H-IpN" id="PSJ-Yi-fwV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="True Tech Home Services" id="ICm-2y-JPm">
+                    <navigationItem key="navigationItem" title="True Tech" id="ICm-2y-JPm">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="XkG-rs-kNc">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0wA-Rp-pJr">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonClick:" destination="RlA-0H-IpN" eventType="touchUpInside" id="lil-O2-DyI"/>
+                                    <segue destination="jz1-UL-toT" kind="modal" identifier="logout" id="Bgz-96-muJ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Knd-4x-ljS">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HFR-gL-liK">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cart"/>
+                                <connections>
+                                    <segue destination="Fhb-gn-JQA" kind="push" id="VMu-ec-KLi"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -851,7 +1008,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" textLabel="Sce-bL-LX0" style="IBUITableViewCellStyleDefault" id="e18-vN-5Lv">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" textLabel="Sce-bL-LX0" detailTextLabel="gQp-RJ-aZf" style="IBUITableViewCellStyleValue1" id="e18-vN-5Lv">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e18-vN-5Lv" id="lrz-3V-fba">
@@ -859,10 +1016,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sce-bL-LX0">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gQp-RJ-aZf">
+                                            <rect key="frame" x="318" y="12" width="42" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -885,4 +1049,9 @@
         <image name="item" width="16" height="16"/>
         <image name="logo" width="1024" height="410"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="XO1-NP-PnH"/>
+        <segue reference="Bgz-96-muJ"/>
+        <segue reference="VMu-ec-KLi"/>
+    </inferredMetricsTieBreakers>
 </document>
