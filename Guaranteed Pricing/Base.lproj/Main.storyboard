@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="jz1-UL-toT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="jz1-UL-toT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -134,7 +134,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3N1-4c-7lJ">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="+"/>
+                                <state key="normal" title="➕"/>
                                 <connections>
                                     <action selector="addToCart:" destination="0O3-oM-lIX" eventType="touchUpInside" id="2nu-Dc-4ZJ"/>
                                 </connections>
@@ -441,7 +441,7 @@
                                             <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x99-zG-fb2">
@@ -460,7 +460,21 @@
                             <outlet property="delegate" destination="BkL-6d-Iul" id="rNa-re-gxr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gmr-Wz-CeF"/>
+                    <navigationItem key="navigationItem" id="gmr-Wz-CeF">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="xW2-e6-txv">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5U2-Gg-jLo">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="➕"/>
+                                <connections>
+                                    <action selector="addButtonClick:" destination="BkL-6d-Iul" eventType="touchUpInside" id="B89-Dq-dDa"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="5U2-Gg-jLo" id="eaP-q9-tkj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7r-Z8-rDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -631,7 +645,7 @@
                                             <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jqT-TO-vUh">
@@ -650,7 +664,21 @@
                             <outlet property="delegate" destination="vVS-Xf-tFT" id="K66-x4-iom"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ivz-1H-tMu"/>
+                    <navigationItem key="navigationItem" id="ivz-1H-tMu">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="1R2-gB-cXV">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="V4y-v4-Iec">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="➕"/>
+                                <connections>
+                                    <action selector="addButtonClick:" destination="vVS-Xf-tFT" eventType="touchUpInside" id="z7Q-Yw-WaF"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="V4y-v4-Iec" id="olD-GJ-EuU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5w-1F-609" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -759,7 +787,7 @@
                                             <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BYK-mV-2vW">
@@ -778,7 +806,21 @@
                             <outlet property="delegate" destination="jfF-6t-lIB" id="vyW-Io-qdo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="xC4-f0-6Bk"/>
+                    <navigationItem key="navigationItem" id="xC4-f0-6Bk">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="VOd-xR-5sD">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dIn-Xh-5iI">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="➕"/>
+                                <connections>
+                                    <action selector="addButtonClick:" destination="jfF-6t-lIB" eventType="touchUpInside" id="FUy-B8-qRT"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="dIn-Xh-5iI" id="pn5-Sa-NVH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTC-nJ-ea8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -887,7 +929,7 @@
                                             <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JLF-IN-ovD">
@@ -906,7 +948,21 @@
                             <outlet property="delegate" destination="TzL-su-AeZ" id="Ccx-jo-w2q"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9kQ-gh-Fl9"/>
+                    <navigationItem key="navigationItem" id="9kQ-gh-Fl9">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="1yv-eT-hVx">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gK9-QG-g7R">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="➕"/>
+                                <connections>
+                                    <action selector="addButtonClick:" destination="TzL-su-AeZ" eventType="touchUpInside" id="rDo-hb-68z"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="gK9-QG-g7R" id="bcT-ZN-WyE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiP-ki-PlP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1019,7 +1075,7 @@
                                             <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gQp-RJ-aZf">
@@ -1038,7 +1094,21 @@
                             <outlet property="delegate" destination="LA2-dr-Rq1" id="YvC-IP-Aln"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vP4-tg-Eo0"/>
+                    <navigationItem key="navigationItem" id="vP4-tg-Eo0">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ftJ-2U-Te2">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MEF-M7-Edv">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="➕"/>
+                                <connections>
+                                    <action selector="addButtonClick:" destination="LA2-dr-Rq1" eventType="touchUpInside" id="Ndr-uh-0u2"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="MEF-M7-Edv" id="xzY-1f-zKB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0o-Ze-YaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1050,8 +1120,8 @@
         <image name="logo" width="1024" height="410"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="174-xc-OTi"/>
         <segue reference="XO1-NP-PnH"/>
-        <segue reference="Bgz-96-muJ"/>
-        <segue reference="VMu-ec-KLi"/>
+        <segue reference="dfA-s7-Pzn"/>
     </inferredMetricsTieBreakers>
 </document>

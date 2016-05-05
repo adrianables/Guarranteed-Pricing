@@ -24,6 +24,7 @@ class Login: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         getCurrentUser()
     }
     
@@ -37,9 +38,12 @@ class Login: UIViewController {
     
     // Check and see if the current user is logged in, if so, move past this page.
     func getCurrentUser(){
+        
         if App.sharedInstance.firebaseRef.authData != nil {
+            
             self.loggedInSuccessfully = true
             self.performSegueWithIdentifier(segueIdentifier, sender: self)
+            
             print("Should have left this page")
             
             // user authenticated

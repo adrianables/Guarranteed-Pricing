@@ -27,6 +27,8 @@ class All: UITableViewController {
     @IBAction func logoutButton(sender: UIButton) {
         App.sharedInstance.firebaseRef.unauth()
         self.performSegueWithIdentifier("logout", sender: self)
+        App.sharedInstance.serviceArray.removeAll()
+        App.sharedInstance.cartArray.removeAll()
     }
     
     

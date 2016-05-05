@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import Firebase
-import MessageUI
 
 class AllListView: UITableViewController {
     
@@ -28,7 +27,7 @@ class AllListView: UITableViewController {
         }
         else
         {
-            addButton.setTitle("+", forState: UIControlState.Normal)
+            addButton.setTitle("➕", forState: UIControlState.Normal)
         }
     }
     
@@ -52,7 +51,7 @@ class AllListView: UITableViewController {
         else
         {
             App.sharedInstance.removeFromCart(item!)
-            addButton.setTitle("+", forState: UIControlState.Normal)
+            addButton.setTitle("➕", forState: UIControlState.Normal)
         }
         
         // debugging tool

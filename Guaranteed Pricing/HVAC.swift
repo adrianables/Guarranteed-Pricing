@@ -23,6 +23,8 @@ class HVAC: UITableViewController {
     @IBAction func logoutButtonClick(sender: UIButton) {
         App.sharedInstance.firebaseRef.unauth()
         self.performSegueWithIdentifier("logout", sender: self)
+        App.sharedInstance.serviceArray.removeAll()
+        App.sharedInstance.cartArray.removeAll()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -38,7 +40,7 @@ class HVAC: UITableViewController {
         if let indexPath = self.tableView.indexPathForSelectedRow {
             let item = App.sharedInstance.getAllObjectsByType(App.sharedInstance.hvacTypeString)[indexPath.row]
             
-            let destination: AllListView = segue.destinationViewController as! AllListView
+            let destination: HVACListView = segue.destinationViewController as! HVACListView
             destination.item = item
         }
     }

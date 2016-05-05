@@ -1,8 +1,8 @@
 //
-//  HVACListView.swift
+//  DetailedServiceListView.swift
 //  Guaranteed Pricing
 //
-//  Created by DePauw on 4/24/16.
+//  Created by DePauw on 4/14/16.
 //  Copyright © 2016 DePauw. All rights reserved.
 //
 
@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 import Firebase
 
-class HVACListView: UITableViewController {
-    
+class DetailedServiceListView: UITableViewController {
     
     @IBOutlet weak var addButton: UIButton!
+    
     
     var item: Service?
     let cellIdentifier = "item"
@@ -38,8 +38,11 @@ class HVACListView: UITableViewController {
         return 0;
     }
     
-   
-    @IBAction func addButtonClick(sender: UIButton) {
+    /**
+     * Onclick event handler for the plus and minus sign to add or remove from the cart respectively
+     */
+    @IBAction func addToCart(sender: AnyObject) {
+        
         if(App.sharedInstance.isInCart(item!) == false)
         {
             App.sharedInstance.cartArray.append(item!)
@@ -53,6 +56,7 @@ class HVACListView: UITableViewController {
         
         // debugging tool
         //App.sharedInstance.printCart()
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -112,5 +116,3 @@ class HVACListView: UITableViewController {
         return cell
     }
 }
-
-

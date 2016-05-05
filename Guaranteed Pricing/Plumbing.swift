@@ -23,6 +23,8 @@ class Plumbing: UITableViewController {
     @IBAction func logoutButtonClick(sender: UIButton) {
         App.sharedInstance.firebaseRef.unauth()
         self.performSegueWithIdentifier("logout", sender: self)
+        App.sharedInstance.serviceArray.removeAll()
+        App.sharedInstance.cartArray.removeAll()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
