@@ -120,9 +120,40 @@ class Email: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMai
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
         
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day , .Month , .Year], fromDate: date)
+        
+        let year =  components.year
+        let month = components.month
+        let day = components.day
+        
+        let dateString = String(month) + "/" + String(day) + "/" + String(year)
+        
+        var tempString: String = ""
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        total.text = formatter.stringFromNumber(App.sharedInstance.getCartTotal())
+        for var i = 0; i < App.sharedInstance.cartArray.count; i++
+        {
+            tempString = tempString + "<p> Name: " +
+                App.sharedInstance.cartArray[i].name + ", Price: " +
+                App.sharedInstance.cartArray[i].part_cost + ", ID: " + "</p>"
+        }
+        
         mailComposerVC.setToRecipients(["alexandermiller_2016@depauw.edu"])
         mailComposerVC.setSubject("True Tech Home Services:")
-        mailComposerVC.setMessageBody("Hi Team!\n\nI would like to share the following feedback..\n", isHTML: false)
+        mailComposerVC.setMessageBody("", isHTML:  false)
+            
+//            "<center><h2>True Tech Home Services</h2></center><br><br>" +
+//            "<p>Thank you for using True Tech Home Services in Oklahoma City, Your Home for Electrical, Heating, Air Conditioning and Plumbing Service, Repair and Installation in Oklahoma City, Edmond and the entire Metro Area.</p>" +
+//            "<p>Receipt date: " + dateString + " </p>" +
+//            "------------------------------<br><br>" +
+//            "<p>Receipt: </p>" +
+//            "<p>Total: " + App.sharedInstance.getCartTotal() + "</p>" +
+//            "------------------------------<br><br>" +
+//            "<p>My name is " + App.sharedInstance.currentUsername +
+//            "<br><br>We appreciate your business.", isHTML: true)
         
         return mailComposerVC
     }
